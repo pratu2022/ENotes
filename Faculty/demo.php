@@ -1,2 +1,3 @@
-bb
-sahi baat h
+<?php 
+
+?>
