@@ -28,6 +28,10 @@ require("sidebar.php");
     <div id="content">
         <div class="container ">
         <h1 class="display-6">Faculty</h1>
+        <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
         <hr class="mt-3">
             <div class="row">
                 <div class="col-md-12">
