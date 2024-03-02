@@ -122,10 +122,10 @@
         <a class="nav-link text-white" href="UploadAssignment.php" ><i class="fa-regular fa-paper-plane mr-4 ico"></i>Upload Assignment</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="viewProfile.php"><i class="fa-solid fa-chalkboard-user mr-4 ico" style="color: #fafafa;"></i>Faculty</a>
+        <a class="nav-link text-white" href="viewFaculty.php"><i class="fa-solid fa-chalkboard-user mr-4 ico" style="color: #fafafa;"></i>Faculty</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="viewProfile.php"><span><i class="fa-solid fa-graduation-cap mr-4 ico" style="color: #f0f2f5;"></i></span>Classmates</a>
+        <a class="nav-link text-white" href="viewStudent.php"><span><i class="fa-solid fa-graduation-cap mr-4 ico" style="color: #f0f2f5;"></i></span>Classmates</a>
       </li>
     
       <li class="nav-item">
@@ -137,7 +137,7 @@
       <li class='nav-item'>
       <a href='../Admin/logout.php' class='nav-link text-white'><span><i class='fa-solid fa-arrow-right-from-bracket mr-4 ico' style='color: #fff;'></i></span>logout</a>
     </li>";        
-    }
+    }~
     ?>
     </ul>
    
