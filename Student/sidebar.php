@@ -136,9 +136,10 @@
       echo "
       <li class='nav-item'>
       <a href='../Admin/logout.php' class='nav-link text-white'><span><i class='fa-solid fa-arrow-right-from-bracket mr-4 ico' style='color: #fff;'></i></span>logout</a>
-    </li>";        
-    }~
-    ?>
+    </li>";  
+          
+      }//~
+     ?>
     </ul>
    
   </div>
