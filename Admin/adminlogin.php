@@ -37,7 +37,7 @@ if (isset($_POST['admin_login'])) {
     else {
         ?>
         <script>
-            swal('Good Job!', "Admin Login Failed!", 'error').then((value) => {
+            swal('Error!', "Admin Login Failed!", 'error').then((value) => {
                 window.location.href = '../index.php';
             })
         </script>
@@ -106,7 +106,7 @@ if(isset($_POST['student_login']))
 
      ?>
      <script>
-         swal('Good Job!', "Cannot Run Query", 'error').then((value) => {
+         swal('Error!', "Cannot Run Query", 'error').then((value) => {
              window.location.href='../index.php';
          })
      </script>
@@ -180,7 +180,7 @@ if(isset($_POST['faculty_login']))
 
      ?>
      <script>
-         swal('Good Job!', "Cannot Run Query", 'error').then((value) => {
+         swal('Error!', "Cannot Run Query", 'error').then((value) => {
              window.location.href='../index.php';
          })
      </script>

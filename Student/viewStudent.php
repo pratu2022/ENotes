@@ -13,6 +13,7 @@ require("sidebar.php");
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="myajax.js"></script>
 
 </head>
 <style>
@@ -27,18 +28,20 @@ require("sidebar.php");
 
     <div id="content">
         <div class="container ">
-        <h1 class="display-6">Classmates</h1>
+        <div class="row">
+            <div class="col-sm-6">
+            <h1 class="display-6">Classmates</h1>
+            </div>
+            <div class="col-sm-6">
+            <form class="d-flex mt-2" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass" style="#fff"></i></button>
+         </form>
+            </div>
+        </div>
         <hr class="mt-3">
             <div class="row">
                 <div class="col-md-12">
-                    <!-- <div class="card mt-3">
-                        <div class="card-header">
-                        </div>
-                        <div class="card-body">
-
-                        </div>
-                        </div>
-                    </div> -->
                     <?php
                             include("../connect.php");
                             $query = "SELECT * FROM tblstudent";
@@ -52,7 +55,7 @@ require("sidebar.php");
                                     foreach ($query_run as $row) {
                                         ?>
                                         
-                                            <div class="card" style="width: 35rem;">
+                                            <div class="card" style="width: 35rem;" id="tbody">
                                                <div class="row">
                                                 <div class="col-sm-3">
                                                 <img src="<?php echo "../Admin/uploads/" . $row['stud_image'] ?>" class="card-img-top"
