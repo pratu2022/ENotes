@@ -31,14 +31,6 @@ require("sidebar.php");
         <hr class="mt-3">
             <div class="row">
                 <div class="col-md-12">
-                    <!-- <div class="card mt-3">
-                        <div class="card-header">
-                        </div>
-                        <div class="card-body">
-
-                        </div>
-                        </div>
-                    </div> -->
                     <?php
                             include("../connect.php");
                             $query = "SELECT * FROM tblfaculty";
