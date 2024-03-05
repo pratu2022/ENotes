@@ -16,6 +16,7 @@ $uploadby = $_POST['uploadby'];
 $subject = $_POST['subject'];
 $filetype = $_POST['filetype'];
 $desci = $_POST['desci'];
+$title = $_POST['title'];
 date_default_timezone_set('Asia/kolkata');
 $date = date("Y-m-d");
 
@@ -50,7 +51,7 @@ else
     }
     else
     {
-        $query = "INSERT INTO `tblnotes`(`srno`, `UploadedBy`, `Uploadedon`, `Subject`, `Notes`, `Type`, `Description`) VALUES (null,'$uploadby','$date','$subject','$notes','$filetype','$desci')";
+        $query = "INSERT INTO `tblnotes`(`srno`, `UploadedBy`, `Uploadedon`, `Subject`, `Notes`, `Type`, `Description`,`Title`) VALUES (null,'$uploadby','$date','$subject','$notes','$filetype','$desci','$title')";
         $query_run = mysqli_query($mysql,$query);
 
             if($query_run)

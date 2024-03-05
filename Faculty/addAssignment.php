@@ -127,6 +127,9 @@ require("sidebar.php");
                                             <textarea name="desci" cols="20" rows="4"
                                                 placeholder="Enter Note Desciption" class="form-control" required></textarea>
                                         </div>
+                                        <div class="form-group">
+                                            <input type="text" name="title" class="form-control" placeholder="Enter Title" id="">
+                                        </div>
                                     
                                     <div class="form-group mt-3">
                                         <input type="submit" value="Upload Assignment" class="button"

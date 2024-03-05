@@ -18,6 +18,7 @@ $filetype = $_POST['filetype'];
 $assign_start_date = $_POST['assign_start_date'];
 $assign_end_date = $_POST['assign_end_date'];
 $desci = $_POST['desci'];
+$title = $_POST['title'];
 date_default_timezone_set('Asia/kolkata');
 $date = date("Y-m-d");
 
@@ -52,7 +53,7 @@ else
     }
     else
     {
-        $query = "INSERT INTO `tblassignment`(`srno`, `UploadedBy`,  `Subject`, `Assignment`, `Start_Date`, `Start_End`,`Type`, `Description`) VALUES (null,'$uploadby','$subject','$assign','$assign_start_date','$assign_end_date','$filetype','$desci')";
+        $query = "INSERT INTO `tblassignment`(`srno`, `UploadedBy`,  `Subject`, `Assignment`, `Start_Date`, `Start_End`,`Type`, `Description`,`Title`) VALUES (null,'$uploadby','$subject','$assign','$assign_start_date','$assign_end_date','$filetype','$desci','$title')";
         $query_run = mysqli_query($mysql,$query);
 
             if($query_run)
@@ -70,8 +71,6 @@ else
 
     }
 }
-
-
 
 ?>
 </body>
