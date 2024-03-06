@@ -2,15 +2,117 @@
 session_start();
 if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)
 {
-require("sidebar.php");
+ require("sidebar.php");
+include('../connect.php');
 ?>
+
+<?php 
+          
+          function commenttree($parentid=NULL)
+          {
+            $notes_id = $_GET['id'];
+  
+            if(is_null($parentid))
+            {
+              // $sql = "SELECT * FROM comments WHERE assign_id= $assign_id AND comment_id= 0";
+              $sql="select * from comments_notes where notes_id= $notes_id AND comment_id = 0";
+              //echo $sql;
+  
+            }
+            else{
+              $sql = "SELECT * FROM comments_notes WHERE notes_id= $notes_id AND comment_id=$parentid";
+            }
+  
+            $result = mysqli_query($GLOBALS['mysql'],$sql);
+             $comments = '';
+            while($data=mysqli_fetch_array($result))
+            {
+              if($data['comment_id']==0)
+              {
+  
+             
+                $comments.='<div class="media border p-3 mb-2">
+                <div class="media-body">
+                  <h6>'.$data['name'].' <small class="text-muted"><i>Posted on '.$data['register_date'].'</i></small></h6>
+                  <p>'.$data['description'].'</p>
+                
+                <p class="text-right"><a href="#postcomment" class="btn btn-primary" onclick="reply('.$data['id'].')">Reply</a></p>
+                
+                
+            </div>
+            </div> ';
+       
+
+         //echo $comments;
+        }
+        else{
+          $comments.='<div class="card ms-auto w-75 p-3 mb-2">
+          <div class="card-body">
+            <h6>'.$data['name'].' <small  class="text-muted"><i>Replied on '.$data['register_date'].'</i></small></h6>
+            <p>'.$data['description'].'</p>
+          
+              <p class=""><a href="#postcomment" class="btn btn-danger" onclick="reply('.$data['id'].')">Reply</a></p>
+          
+      </div>
+      </div>';	
+        }
+        $comments.='<div class="media pl-3 mb-2">
+        <div class="media-body">
+         
+		  '.commenttree($data['id']).'
+		 
+        </div>
+      </div> ';
+       
+            }
+            return $comments;
+          }
+
+        
+
+          // function end
+
+        if(isset($_POST['submit_assign']))
+        {
+          $notes_id = $_GET['id'];
+          if(empty($_POST['commentid']))
+          {
+            $commentid = 0;
+          }
+          else
+          {
+            $commentid = $_POST['commentid'];
+          }
+          //$sql = "INSERT INTO `comments_notes`(`id`,`notes_id`, `comment_id`, `name`, `description`) VALUES (null,'$notes_id','$commentid','$_POST[name]','$_POST[comment]')";
+          $sql = "INSERT INTO `comments_notes`(`id`, `notes_id`, `comment_id`, `name`, `description`) VALUES ('null','$notes_id','$commentid','$_POST[name]','$_POST[comment]')";
+          //echo $sql;
+          $result = mysqli_query($GLOBALS['mysql'],$sql);
+          echo $result;
+          if($result)
+          {
+            ?>
+            <script>
+            alert("add Successfully");
+            </script>
+            <?php
+          }
+          else
+          {
+            ?>
+            <script>
+              alert("error");
+            </script>
+            <?php
+          }
+        }
+        ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Notes</title>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <style>
@@ -174,15 +276,55 @@ require("sidebar.php");
             }
         }
             ?>
-         <a href="<?php echo "../Faculty/uploadnotes/" . $row['Notes'] ?>" class="btns mt-2 mb-3 ml-3" download>Download</a>
-         <!-- <i class="fa fa-download icon-button mt-1" style="color:#28a745; margin-left:1pc"></i> -->
+          <div id="postcomment" class="p-5">
+        <!-- <h4 id="commenttext">Comments</h4> -->
+        <h4 id="commenttext">Comment:</h4>
+        <form method="post">
+          <input type="hidden" name="commentid" id="commentid">
         <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+          <input type="text" class="form-control mb-2" name="name" id="floatingPassword" placeholder="Password" value="<?php echo $_SESSION['name'] ?>">
+          <label for="floatingPassword">Name</label>
+        </div>
+        <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="comment"></textarea>
         <label for="floatingTextarea2">Comments</label>
         </div>
-        <div class="mt-5">
-            <button class="button">Comment</button>
+        <div class="mt-2 mb-2">
+            <button type="submit" class="button" name="submit_assign">Comment</button>
         </div> 
+       
+        </form>
+        <script>
+         function reply(commentid) 
+         {
+           $("#commentid").val(commentid);
+           $("#commenttext").text('Reply:');
+         }
+         </script>
+        </div>
+       
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        View Comments
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+          
+        <?php 
+  
+  $commentdata=commenttree();
+  
+  echo $commentdata;
+  
+  ?> 
+      </div>
+    </div>
+  </div>
+       
+       
     </div>
    </div>
 </body>

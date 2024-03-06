@@ -108,6 +108,7 @@ if(isset($_POST['view']))
                                                 </div>
                                                 <!-- <a href="<?php// echo "../Faculty/uploadnotes/" . $row['Notes'] ?>" class="btn btn-success mt-3"
                                                         download>DOWNLOAD</a> -->
+                                                    <form>
                                                         <a href="viewAssignOne.php?id=<?php echo $row['srno']; ?>"
                                                     ><i class="fa-solid fa-eye icon-button mt-2"></i></a>
                                                     </form>
