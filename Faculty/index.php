@@ -126,7 +126,7 @@ require("sidebar.php");
                     }
                
                 ?>
-                         
+  
                     </div>
 
 
