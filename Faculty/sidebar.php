@@ -88,6 +88,21 @@
 *::-webkit-scrollbar-thumb:active {
   background-color: #b99aff;
 }
+    
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #3498db; /* Change the color as needed */
+}
+
+/* Optional: Add some styles on hover or focus */
+.icon-button:hover,
+.icon-button:focus {
+  outline: none;
+  color: #2078c6; /* Change the hover/focus color as needed */
+}
 
   </style>
 </head>
@@ -140,7 +155,96 @@
     <?php } ?>
   </div>
   <div id="content">
-  
+  <button type="button" class="icon-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-user-group" style="color:#614385"></i></button>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Faculty Status</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+  <?php
+  include("../connect.php");
+                    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
+                     // $UID = $_SESSION['uid'];
+                      $name = $_SESSION['name'];
+                      // $res =  mysqli_query($mysql,"SELECT * FROM tblfaculty");
+                      $res =  mysqli_query($mysql,"SELECT * FROM tblfaculty WHERE fac_name <> '$name'");
+                      $time = time();
+                    ?>
+                   <div class="container scrollable-content">
+                   <table class="table">
+                    <thead>
+                    <tr>
+                        <!-- <th>Srno</th> -->
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody id="user_grid">
+                        <?php
+                            $i = 0;
+                            while($row = mysqli_fetch_assoc($res)){
+                                $i++;
+                                if($row['time'] > $time){
+                                    //user online
+                                    $status = 'Online';
+                                    $class = 'badge-success';
+                                }
+                                else{
+                                    // not login
+                                    $status = 'Offline';
+                                    $class = 'badge-danger';
+                                }
+                        ?>
+                    <tr>
+                        
+                        <td><?= $row['fac_name']?></td>
+                        <td><span class="badge <?= $class?>"><?= $status ?></span></td>
+                    </tr>
+                    <?php }} ?>
+                </tbody>
+                </table>
+                   </div>
+<script>
+    
+
+        function UpdateStatus() {
+            $.ajax({
+                url:'updateStatus.php',
+                type:'post',
+                success:() =>{
+
+                }
+            })
+        }
+        function getStatus() {
+             $.ajax({
+                url:'getUserStatus.php',
+                type:'post',
+                success:(res) =>{
+                    $("#user_grid").html(res);
+                }
+            })
+        }
+
+        setInterval(() => {
+            UpdateStatus();
+        }, 1000);
+
+        setInterval(() => {
+            getStatus();
+        }, 5000);
+    </script>
+
+<!-- <script>
+  $(document).ready( function () {
+    $('#myTable').DataTable();
+  });
+</script> -->
+  </div>
+</div>
+
   </div>
 </body>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

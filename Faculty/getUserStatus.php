@@ -1,8 +1,10 @@
 <?php 
+session_start();
+$name = $_SESSION['name'];
 include('../connect.php');
 $time = time();
 
-$res = mysqli_query($mysql,"Select * from tblfaculty");
+$res = mysqli_query($mysql,"SELECT * FROM tblfaculty WHERE fac_name <> '$name'");
 $i = 0;
 
 while($row = mysqli_fetch_assoc($res)){
