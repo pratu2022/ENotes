@@ -20,27 +20,30 @@ $title = $_POST['title'];
 date_default_timezone_set('Asia/kolkata');
 $date = date("Y-m-d");
 
-$notes = $_FILES['notes']['name'];
 
 $allowed_extension = array('pdf', 'docx','mp4');
-$filename = $_FILES['notes']['name'];
-$file_extension = pathinfo($filename, PATHINFO_EXTENSION);
+// $filename = $_FILES['notes']['name'];
+// $file_extension = pathinfo($filename, PATHINFO_EXTENSION);
 
-if(!in_array($file_extension,$allowed_extension))
+$length = count($_FILES['notes']['name']);
+
+for($i=0;$i<$length;$i++)
 {
-    ?>
+//     if(!in_array($file_extension,$allowed_extension))
+// {
+//     ?>
         
-    <script>
-        swal('Error!', "You are allowed only Pdf,Docx,mp4 Only", 'error').then((value) => {
-            window.location.href = 'addNotes.php';
-        })
-    </script>
-    <?php
-}
-else
-{
-    if (file_exists("uploadnotes/" . $_FILES['notes']['name'])) {
-        $filename = $_FILES['notes']['name'];
+//     <script>
+//         swal('Error!', "You are allowed only Pdf,Docx,mp4 Only", 'error').then((value) => {
+//             window.location.href = 'addNotes.php';
+//         })
+//     </script>
+//     <?php
+// }
+// else
+// {
+    if (file_exists("uploadnotes/" . $_FILES['notes']['name'][$i])) {
+        $filename = $_FILES['notes']['name'][$i];
         ?>
         <script>
             swal('Error!', "Already Notes are added!" .$filename, 'error').then((value) => {
@@ -51,12 +54,14 @@ else
     }
     else
     {
+        $notes = $_FILES['notes']['name'][$i];
+
         $query = "INSERT INTO `tblnotes`(`srno`, `UploadedBy`, `Uploadedon`, `Subject`, `Notes`, `Type`, `Description`,`Title`) VALUES (null,'$uploadby','$date','$subject','$notes','$filetype','$desci','$title')";
         $query_run = mysqli_query($mysql,$query);
 
             if($query_run)
             {
-                move_uploaded_file($_FILES["notes"]["tmp_name"],"uploadnotes/".$notes);
+                move_uploaded_file($_FILES["notes"]["tmp_name"][$i],"uploadnotes/".$notes);
                 
                 ?>
                  <script>
@@ -69,6 +74,8 @@ else
 
     }
 }
+// }
+
 
 
 

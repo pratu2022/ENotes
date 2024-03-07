@@ -16,6 +16,8 @@ require("sidebar.php");
         <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />   
+        <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script> 
+      <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 </head>
 <style>
     #content {
@@ -102,9 +104,10 @@ require("sidebar.php");
                                                
                                             </div>
 
-                                            <div class="form-group mt-3">
-                                                <input type="file" class="form-control" name="notes" required />
+                                            <div class="form-group mt-3" class="dropzone" id="dropzonewidget">
+                                                <input type="file" class="form-control" name="notes[]" id="f" multiple required />
                                             </div>
+                                           
                                    
                                    
 
