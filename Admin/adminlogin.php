@@ -62,6 +62,7 @@ if(isset($_POST['student_login']))
                 //echo "right";
                 $_SESSION['logged_in'] = true;
                 $_SESSION['username'] = $result_fetch['stud_username'];
+                $_SESSION['uid'] = $result_fetch['id'];
                 $_SESSION['regno'] = $result_fetch['regno'];
                 $_SESSION['name'] = $result_fetch['stud_name'];
                 $_SESSION['address'] = $result_fetch['stud_address'];

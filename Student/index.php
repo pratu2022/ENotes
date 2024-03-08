@@ -43,7 +43,6 @@ require("../connect.php");
 <body>
 
     <div id="content">
-       
         <div class="container">
         <h1 class="display-6">Dashboard</h1>
         <hr class="mt-3">
