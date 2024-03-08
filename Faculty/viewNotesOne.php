@@ -278,7 +278,7 @@ include('../connect.php');
             ?>
           <div id="postcomment" class="p-5">
         <!-- <h4 id="commenttext">Comments</h4> -->
-        <h4 id="commenttext">Comment:</h4>
+        <h4 id="commenttext">Reply:</h4>
         <form method="post">
           <input type="hidden" name="commentid" id="commentid">
         <div class="form-floating">
@@ -290,15 +290,17 @@ include('../connect.php');
         <label for="floatingTextarea2">Comments</label>
         </div>
         <div class="mt-2 mb-2">
-            <button type="submit" class="button" name="submit_assign">Comment</button>
+            <button type="submit" class="button" name="submit_assign">Reply</button>
         </div> 
-       
+
         </form>
         <script>
          function reply(commentid) 
          {
            $("#commentid").val(commentid);
            $("#commenttext").text('Reply:');
+          // var str = '<form method="post"><h4 id="commenttext"></h4><input type="hidden" name="commentid" id="commentid"><div class="form-floating"><input type="text" class="form-control mb-2" name="name" id="floatingPassword" placeholder="Password" value="<?php echo $_SESSION['name'] ?>"><label for="floatingPassword">Name</label></div><div class="form-floating"><textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="comment"></textarea><label for="floatingTextarea2">Comments</label></div><div class="mt-2 mb-2"><button type="submit" class="button" name="submit_assign">Comment</button></div></form>';
+          // $("#postcomment").append(str);
          }
          </script>
         </div>

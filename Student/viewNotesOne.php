@@ -36,12 +36,14 @@ include('../connect.php');
                   <h6>'.$data['name'].' <small class="text-muted"><i>Posted on '.$data['register_date'].'</i></small></h6>
                   <p>'.$data['description'].'</p>
                 
-                <p class="text-right"><a href="#postcomment" class="btn btn-primary" onclick="reply('.$data['id'].')">Reply</a></p>
+                
                 
                 
             </div>
             </div> ';
-       
+            // <p class="text-right"><a href="#postcomment" class="btn btn-primary" onclick="reply('.$data['id'].')">Reply</a></p>
+            // <p class=""><a href="#postcomment" class="btn btn-danger" onclick="reply('.$data['id'].')">Reply</a></p>
+
 
          //echo $comments;
         }
@@ -51,7 +53,6 @@ include('../connect.php');
             <h6>'.$data['name'].' <small  class="text-muted"><i>Replied on '.$data['register_date'].'</i></small></h6>
             <p>'.$data['description'].'</p>
           
-              <p class=""><a href="#postcomment" class="btn btn-danger" onclick="reply('.$data['id'].')">Reply</a></p>
           
       </div>
       </div>';	
