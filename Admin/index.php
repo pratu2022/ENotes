@@ -38,7 +38,10 @@ require("sidebar.php");
             overflow-y: auto;
             
         }
-
+.card-header{
+  background-color: #614385;
+    background: linear-gradient(115deg, #614385, #516395);
+}
 
 </style>
 
@@ -121,7 +124,7 @@ require("sidebar.php");
           </div>
         </div>
 
-
+       
         
       </div>
       </div>
@@ -133,7 +136,7 @@ require("sidebar.php");
 <script>
   AOS.init();
 </script>
-</body>
+
 <?php
 require("../connect.php");
 $currentDate = date("Y-m-d");
@@ -205,8 +208,8 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		toolTipContent: "{name}: <strong>{y}%</strong>",
 		indexLabel: "{name} - {y}%",
 		dataPoints: [
-			{ y: <?php echo $faculty ?>, name: "Faculity", exploded: true },
-			{ y:  <?php echo $student ?>, name: "Students" }
+			{ y: <?php echo $faculty ?>, name: "Faculity", exploded: true,color:'#614385' },
+			{ y:  <?php echo $student ?>, name: "Students",color: '#516395' }
 		
 
 			
@@ -228,9 +231,45 @@ function explodePie (e) {
 </script>
 
 
+<div class="row">
+<div class="col-lg-5">
+<div id="chartContainer" class="mt-5" style="height: 300px; width: 600px; margin-left:17pc"></div>
+</div>
 
-<div id="chartContainer" class="mt-5" style="height: 300px; width: 700px; margin-left:29pc"></div>
+        <div class="col-lg-7">
+          <div class="card z-index-2 mt-5" style="height: 300px; width: 35pc; margin-left:15pc">
+        <div class="card-header text-white pb-0">
+          <h6>Recent Registration of Students</h6>
+          <p class="text-sm">
+          <!-- <span class="badge badge-success">new</span> -->
+          </p>
+        </div>
+        <div class="card-body p-3">
+        <?php
+                require("../connect.php");
+                $sql = "SELECT * FROM tblstudent ORDER BY register_date DESC LIMIT 5";
+                $ttlstud = mysqli_query($mysql, $sql);
+
+                // $rows = mysqli_num_rows($ttlstud);
+                // echo $rows
+                  ?>
+                   <ul class="list-group">
+                 <?php
+                 if (mysqli_num_rows($ttlstud) > 0) {
+                  foreach ($ttlstud as $row) {
+                  ?>
+                 
+                  <li class="list-group-item"><?php echo $row['stud_name']?> <span class="badge badge-success ml-3">new</span></li>
+                  <?php }} ?>
+                  </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+        </div>
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+</body>
 </html>
 <?php
 }
