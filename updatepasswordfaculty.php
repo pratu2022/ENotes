@@ -10,14 +10,42 @@
       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <style>
-    .card
-    {
-        box-shadow: 10px 10px 62px 0px rgba(0,0,0,0.75);
--webkit-box-shadow: 10px 10px 62px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 62px 0px rgba(0,0,0,0.75);
-    }
+     #content {
+    margin-left: 250px;
+    padding: 15px;
+  }
+
+  /* .cards{
+    background-color: #614385;
+    background: linear-gradient(115deg, #614385, #516395);
+    box-shadow: 10px 10px 31px -1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 31px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 31px -1px rgba(0,0,0,0.75);
+    border-radius: 5px 50px;
+  } */
+
+  .scrollable-content {
+            max-height: 20pc; /* Adjust this value based on your content height */
+            overflow-y: auto;
+            
+        }
+        .button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #614385;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.1); /* Scale the button by 10% on hover */
+}
 </style>
-<body class="bg-success">
+<body style="background-color: #614385;">
     <?php
     require("connect.php");
     if (isset($_GET['faculty_email']) && isset($_GET['reset_token'])) 
@@ -39,12 +67,12 @@
                 <div class='card' style='width: 23rem'>
                 <div class='card-body'>
                 <form  method='POST'>
-                <h3 class = 'text-success p-2'>Create New Password</h3>
+                <h3 class = 'p-2' style='color:#614385'>Create New Password</h3>
                 <input type='password' class='form-control'  placeholder='Enter New Password'
                 name='password'>
                 <input type='password' class='mt-3 form-control'  placeholder='Confirm Password'
                 name='cpassword'> 
-                <input type='submit' value='UPDATE' name = 'updatepassword' class='btn btn-success text-white mt-3'>
+                <input type='submit' value='UPDATE' name = 'updatepassword' class='button mt-3'>
                 <input type='hidden' name='email' value='$_GET[faculty_email]'>
             </form>
             </div>

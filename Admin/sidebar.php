@@ -120,18 +120,18 @@
       <li class="nav-item">
         <a class="nav-link " href="addStudent.php"><span><i class="fa-solid fa-graduation-cap mr-4 mt-3 ico" style="color: #f0f2f5;"></i></span>Student</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link " href="viewStudent.php">View Student</a>
+       <li class="nav-item">
+        <a class="nav-link " href="ReportS.php"><span><i class="fa-solid fa-graduation-cap mr-4 mt-3 ico" style="color: #f0f2f5;"></i></span>Report Student</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link " href="searchstud.php">Search Student By Registration Number</a>
-      </li> -->
+      </li>  -->
       <li class="nav-item">
         <a class="nav-link " href="addFaculty.php"><span><i class="fa-solid fa-chalkboard-user mr-4 mt-3 ico" style="color: #fafafa;"></i></span>Faculty</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link " href="addFaculty.php" >Add Faculty</a>
-      </li> -->
+      <li class="nav-item">
+        <a class="nav-link " href="ReportF.php"><span><i class="fa-solid fa-chalkboard-user mr-4 mt-3 ico" style="color: #fafafa;"></i></span>Report Faculty</a>
+      </li>
       <!-- <li class="nav-item">
         <a class="nav-link " href="Event.php"><span><i class="fa-solid fa-calendar-days mr-2 ico" style="color: #fafafa;"></i></span>Notice Board</a>
       </li> -->

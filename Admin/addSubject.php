@@ -105,7 +105,7 @@ require("sidebar.php");
                         </div>
                         </div>
 
-                                        <?php
+                            <?php
                             include("../connect.php");
                             $query = "SELECT * FROM tblsubject";
                             $query_run = mysqli_query($mysql, $query);

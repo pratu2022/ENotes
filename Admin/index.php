@@ -137,49 +137,53 @@ require("sidebar.php");
 <?php
 require("../connect.php");
 $currentDate = date("Y-m-d");
-$fac_date= "SELECT * FROM tblfaculty WHERE date = '$currentDate'";
+// $fac_date = "SELECT * FROM tblfaculty WHERE date = '$currentDate'";
 // echo $qs;
-$fac_ttl = "SELECT id FROM tblfaculty ORDER BY id";
+$fac = "SELECT id FROM tblfaculty ORDER BY id";
+$stud = "SELECT id FROM tblstudent ORDER BY id";
 
- $fac_qdate = mysqli_query($mysql, $fac_date);
- $fac_qttl = mysqli_query($mysql, $fac_ttl);
 
- $facnrow = mysqli_num_rows($fac_qdate);
-//  echo $facnrow;
+
+ $fac_query = mysqli_query($mysql, $fac);
+ $stud_query = mysqli_query($mysql, $stud);
+
+ $facnrow = mysqli_num_rows($fac_query);
+// echo $facnrow;
+ $studnrow = mysqli_num_rows($stud_query);
+
+ $total = $facnrow + $studnrow;
+ //echo $total;
+
+  $faculty = ($facnrow/ $total) *100;
+ $student = ($studnrow/$total)*100;
+  // echo $faculty;
  ?>
  <!-- <br/> -->
  <?php
- $factnrow = mysqli_num_rows($fac_qttl);
-  // echo $factnrow;
- $perf = ($facnrow/$factnrow) * 100;
+//  $factnrow = mysqli_num_rows($fac_qttl);
+//    echo $factnrow;
+//  $perf = ($facnrow/$factnrow) * 100;
  ?>
  <!-- <br/> -->
 
+
 <?php
-require("../connect.php");
-// $qs = "SELECT regno FROM tblstudent ORDER BY regno";
-// $ttlstud = mysqli_query($mysql, $qs);
-// $rowstud = mysqli_num_rows($ttlstud);
-// echo $rowstud;
-?>
-<?php
-require("../connect.php");
-$currentate = date("Y-m-d");
-$qss = "SELECT * FROM tblstudent WHERE date = '$currentate'";
+// require("../connect.php");
+// $currentate = date("Y-m-d");
+// $qss = "SELECT * FROM tblstudent WHERE date = '$currentate'";
 // echo $qs;
-$qtt = "SELECT id FROM tblstudent ORDER BY id";
 
- $ttlqss = mysqli_query($mysql, $qss);
- $ttlqtt = mysqli_query($mysql, $qtt);
+//  $ttlqss = mysqli_query($mysql, $qss);
+//  $ttlqtt = mysqli_query($mysql, $qtt);
 
- $rowqss = mysqli_num_rows($ttlqss);
+// $rowqss = mysqli_num_rows($ttlqss);
 //  echo $rowqss;
  ?>
  <!-- <br/> -->
  <?php
- $rowqtt = mysqli_num_rows($ttlqtt);
+// $rowqtt = mysqli_num_rows($ttlqtt);
 //  echo $rowqtt;
- $perstud = ($rowqss/$rowqtt) * 100;
+ //$perstud = ($rowqss/$rowqtt) * 100;
  ?>
 
 <script>
@@ -189,7 +193,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	exportEnabled: true,
 	animationEnabled: true,
 	title:{
-		text: "Daily Registration of Faculites and Students"
+		text: "Total Registration of Faculites and Students"
 	},
 	legend:{
 		cursor: "pointer",
@@ -201,9 +205,9 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		toolTipContent: "{name}: <strong>{y}%</strong>",
 		indexLabel: "{name} - {y}%",
 		dataPoints: [
-			{ y: <?php echo $perf ?>, name: "Faculity", exploded: true },
-			{ y:  <?php echo $perstud ?>, name: "Students" },
-			{ y:  <?php $add = 100-($perf + $perstud); echo $add ?>, name: "Other" }
+			{ y: <?php echo $faculty ?>, name: "Faculity", exploded: true },
+			{ y:  <?php echo $student ?>, name: "Students" }
+		
 
 			
 		]

@@ -15,7 +15,9 @@ require("sidebar.php");
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />   
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />  
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css"> 
         
 </head>
 <style>
@@ -65,9 +67,10 @@ require("sidebar.php");
     <h1 class="display-6">Faculty</h1>
     <hr class="mt-3">
             <div class="container mt-2">
+               
                 <div class="row">
-                    <div class="col-md-12">
-                    <button class="button mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Faculty Registration</button>
+                    <div class="col-md-12">    
+                        <button class="button mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Faculty Registration</button>
                         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title" id="offcanvasRightLabel">Faculty Registration</h5>
@@ -138,9 +141,6 @@ require("sidebar.php");
                                        </form>
                         </div>
                         </div>
-
-                        
-                       
                        
                     </div>
                 </div>
@@ -155,9 +155,6 @@ require("sidebar.php");
                             $query_run = mysqli_query($mysql, $query);
                            
                             ?>
-
-                            
-                           
 
                             <div class="row p-3">
                             <table  id="myTable" class="table table-striped">
@@ -221,6 +218,11 @@ require("sidebar.php");
 
                                     <tr>
                                         <td>No Record Found!</td>
+                                        <td>No Record Found!</td>
+                                        <td>No Record Found!</td>
+                                        <td>No Record Found!</td>
+                                        <td>No Record Found!</td>
+                                        <td>No Record Found!</td>
                                     </tr>
                                     <?php
                                 }
@@ -230,6 +232,7 @@ require("sidebar.php");
                         </table>
             </div>
     </div>
+
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>

@@ -55,7 +55,7 @@ require("sidebar.php");
 	<div class="modal-dialog modal-md" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="modalLabel">Notice</h5>
+				<h5 class="modal-title" id="modalLabel">Make a Announcement</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
@@ -65,7 +65,7 @@ require("sidebar.php");
 					<div class="row">
 						<div class="col-sm-12">  
 							<div class="form-group">
-							  <label for="event_name">Notice Description</label>
+							  <label for="event_name">Announcement Description</label>
 							  <input type="text" name="event_name" id="event_name" class="form-control" placeholder="Enter your event name">
 							</div>
 						</div>
@@ -162,7 +162,7 @@ if(event_name=="" || event_start_date=="" || event_end_date=="")
 {
 alert("Please enter all required details.");
 return false;
-}
+} 
 $.ajax({
  url:"save_event.php",
  type:"POST",

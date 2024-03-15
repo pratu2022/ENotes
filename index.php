@@ -71,7 +71,7 @@
                   <a class="nav-link " href="#online_services">Service</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " aria-disabled="true">NS Team</a>
+                  <a class="nav-link " aria-disabled="true">Contact</a>
                 </li>
               </ul>
         </div>
@@ -215,7 +215,7 @@
         <div class="row mb-5 ">
             <div class="d-flex flex-column align-items-start justify-content-center col-xl-6 xol-lg-6 col-md-12 col-12 order-1 order-lg-0 text-md-start text-center">
                 <h1 class=" text-capitalize fw-bolder text-white">
-                    We Collect High Quality Leads
+                We've summarized and analyzed every book on your syllabus.
                 </h1>
                 <p class="mt-3 mb-5  para-width text-light-grey ">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -258,7 +258,7 @@
 
 <section class=" services-section">
     <div class="container text-center common-title fw-bold">
-        <h2 class="common-heading">What We Will Do For <br> Your Business</h2>
+        <h2 class="common-heading">What We Will Do</h2>
         <hr class="w-25 mx-auto ">
     </div>
 
@@ -268,7 +268,7 @@
                 <div class=" card-box rounded-2 p-5 text-center">
                     <img alt="GIF Image" class="img-fluid" src="./images/link.gif" width="200px">
 
-                    <h5 class="my-3 fw-normal "> Link Building</h5>
+                    <h5 class="my-3 fw-normal ">Provide Best Notes</h5>
                     <p class="pe-3 mb-5">
                         Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse!
                     </p>
@@ -285,7 +285,7 @@
                 <div class=" card-box rounded-2 p-5 text-center shadow">
                     <img alt="GIF Image" class="img-fluid" src="./images/speaker.gif" width="200px">
 
-                    <h5 class="my-3 fw-normal"> Content marketing </h5>
+                    <h5 class="my-3 fw-normal">Provide Best Assignments </h5>
                     <p class="pe-3 mb-5">
                         Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse!
                     </p>
@@ -301,7 +301,7 @@
             <div class="col-xxl-4 col-lg-4 col-12 ">
                 <div class=" card-box rounded-2 p-5 text-center">
                     <img alt="GIF Image" class="img-fluid" src="./images/seo.gif" width="200px">
-                    <h5 class="my-3 fw-normal "> On Page SEO </h5>
+                    <h5 class="my-3 fw-normal "> Best Faculties For Help </h5>
                     <p class="pe-3 mb-5">
                         Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse!
                     </p>
@@ -333,7 +333,7 @@
             <div class="col-xl-6 xol-lg-6 col-md-12 col-12  d-flex flex-column justify-content-center align-items-start ">
 
                 <h1 class="common-heading text-capitalize fw-bolder text-white">
-                    Steps to Build a <br> Successful Digital Product
+                    Steps to Build a <br> Successful Digital Notes
                 </h1>
                 <p class="mt-3 mb-5 para-width text-light-grey">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -354,7 +354,7 @@
 
 <section class="common-section business-section" id="online_services">
     <div class="container text-center fw-bold common-title">
-        <h2 class="common-heading">Generating New Customers Via <br>Online Mode</h2>
+        <h2 class="common-heading">Facilities<br></h2>
         <hr class="w-25 mx-auto ">
     </div>
 
@@ -366,7 +366,7 @@
                          width="150px">
 
                     <div class="row ">
-                        <p class="mb-3 fw-bolder">Social Media Advertising </p>
+                        <p class="mb-3 fw-bolder">Notes are  Manage in Pdf/Video/Document Form</p>
                         <p> Reach a wider audience by creating engaging ads on platforms like Facebook, Instagram and
                             LinkedIn. Target specific demographics to connect with potential customers interested in
                             your services. </p>
@@ -381,7 +381,7 @@
                          width="150px">
 
                     <div class="row ">
-                        <p class="mb-3 fw-bolder">Influencer Marketing </p>
+                        <p class="mb-3 fw-bolder">Assignments are Manage in Pdf Form</p>
                         <p>Partner with influential individuals or bloggers in your industry to tap into their audience.
                             Through sponsored posts or endorsements, you can generate interest and attract new customers
                             to your online channels. </p>
@@ -395,7 +395,7 @@
                          width="150px">
 
                     <div class="row ">
-                        <p class="mb-3 fw-bolder">Content Marketing </p>
+                        <p class="mb-3 fw-bolder">Announcements</p>
                         <p>Publish valuable and optimized content on your website's blog. Attract organic traffic,
                             position your brand as an authority, and encourage visitors to engage and make a
                             purchase. </p>
@@ -409,7 +409,7 @@
                          width="150px">
 
                     <div class="row ">
-                        <p class="mb-3 fw-bolder">Referral Programs</p>
+                        <p class="mb-3 fw-bolder">View User Status</p>
                         <p>Implement a customer referral program. Incentivize existing customers to refer others with
                             rewards like discounts or loyalty points. Word-of-mouth marketing helps acquire new
                             customers.</p>
@@ -425,7 +425,7 @@
 <!--testimonial section -->
 <section class="common-section mb-5 pt-5 bg-color">
     <div class="container text-center common-title  ">
-        <h2 class="common-heading text-white">What Client Say<br>About Us</h2>
+        <h2 class="common-heading text-white">Top Faculties<br></h2>
         <hr class="w-25 mx-auto">
     </div>
 
@@ -444,14 +444,24 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row g-4">
+            <?php
+            include("connect.php");
+            $query = "SELECT * FROM tblfaculty LIMIT 3";
+            $query_run = mysqli_query($mysql, $query);
+            ?>
+            <?php
+         if (mysqli_num_rows($query_run) > 0) {
+            foreach ($query_run as $row) {
+        ?>
+                        
                         <div class="col-xxl-4">
                             <div class="d-flex justify-content-center align-items-center">
                                 <div class="card  p-3" style="width: 18rem; ">
                                     <img alt="..."
                                          class="card-img-top"
-                                         src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                         src="<?php echo "Admin/uploadf/" . $row['fac_image'] ?>" style="border-radius:70rem;">
                                     <div class="card-body text-center">
-                                        <p class="card-title  mb-3 ">Angelina Thapa</p>
+                                        <p class="card-title  mb-3 "><?php echo $row['fac_name'] ?></p>
                                         <p class="card-text ">Some quick example text to build on the card title and
                                             make
                                             up
@@ -467,8 +477,9 @@
                                 </div>
                             </div>
                         </div>
+                    <?php  }}?>
 
-                        <div class="col-xxl-4">
+                        <!-- <div class="col-xxl-4">
                             <div class="d-flex justify-content-center align-items-center">
                                 <div class="card  p-3" style="width: 18rem;">
                                     <img alt="..."
@@ -611,9 +622,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="col-xxl-4">
+                      
+
+                        <!-- <div class="col-xxl-4">
                             <div class="d-flex justify-content-center align-items-center">
                                 <div class="card  p-3" style="width: 18rem;">
                                     <img alt="..."
@@ -634,30 +647,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-xxl-4">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <div class="card  p-3" style="width: 18rem;">
-                                    <img alt="..."
-                                         class="card-img-top"
-                                         src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-                                    <div class="card-body text-center">
-                                        <p class="card-title  mb-3">Angelina Thapa</p>
-                                        <p class="card-text">Some quick example text to build on the card title and make
-                                            up
-                                            the bulk of the card's content.</p>
-                                        <div class="d-flex justify-content-center">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -679,102 +669,47 @@
 
 
 <!--testimonail section ends-->
-
+<?php
+ include("connect.php");
+$query = "SELECT * FROM tblsubject";
+$query_run = mysqli_query($mysql, $query);
+ ?>
 <!-- Pricing section -->
 <section class="common-section blog-section">
     <div class="common-heading container text-center common-title  ">
-        <h2 class="common-heading">Tips and Tricks From <br>Our Exparts</h2>
+        <h2 class="common-heading"> Courses<br></h2>
         <hr class="w-25 mx-auto">
     </div>
 
     <div class="container my-5">
         <div class="row g-5  ">
+        <?php
+         if (mysqli_num_rows($query_run) > 0) {
+            foreach ($query_run as $row) {
+        ?>
             <div class="col-xl-3 col-md-6 col-12 ">
                 <div class="d-flex justify-content-center align-items-center">
                     <div class="card" style="width: 18rem;">
-                        <img alt="..."
-                             class="card-img-top" src="./images/1.png">
+                        <!-- <img alt="..."
+                             class="card-img-top" src="./images/1.png"> -->
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
 
-                                <p class="small text-grey "><i class="fa-solid fa-book-open-reader"></i> : 5000 </p>
+                                <p class="small text-grey "><i class="fa-solid fa-book-open-reader"></i></p>
                                 <p class="small text-grey "> March 3, 2020 </p>
                             </div>
-                            <h5 class="card-title mt-3">Web Development</h5>
+                            <h5 class="card-title mt-3"><?php  echo $row['subject_name']?></h5>
 
-                            <p class="card-text mt-2 mb-3">Some quick example text to build on the card title and make
-                                up the bulk of
-                                the card's content.</p>
-                            <a class="px-4 py-2 btn btn-dark" href="#">Read More</a>
+                            <p class="card-text mt-2 mb-3"><?php  echo $row['allocated_faculty']?></p>
+                            <!-- <a class="px-4 py-2 btn btn-dark" href="#">Read More</a> -->
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-xl-3 col-md-6 col-12 ">
-                <div class="d-flex justify-content-center align-items-center">
-                    <div class="card" style="width: 18rem;">
-                        <img alt="..."
-                             class="card-img-top" src="./images/2.png">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-
-                                <p class="small text-grey "><i class="fa-solid fa-book-open-reader"></i> : 5000 </p>
-                                <p class="small text-grey "> March 3, 2020 </p>
-                            </div>
-                            <h5 class=" mt-3 card-title">Freelancing</h5>
-                            <p class="card-text mt-2 mb-3">Some quick example text to build on the card title and make
-                                up the bulk of
-                                the card's content.</p>
-                            <a class="px-4 py-2 btn btn-dark" href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 col-12 ">
-                <div class="d-flex justify-content-center align-items-center">
-                    <div class="card" style="width: 18rem;">
-                        <img alt="..."
-                             class="card-img-top" src="./images/3.png">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-
-                                <p class="small text-grey "><i class="fa-solid fa-book-open-reader"></i> : 5000 </p>
-                                <p class="small text-grey "> March 3, 2020 </p>
-                            </div>
-                            <h5 class=" mt-3 card-title">Graphic Designer</h5>
-                            <p class="card-text mt-2 mb-3">Some quick example text to build on the card title and make
-                                up the bulk of
-                                the card's content.</p>
-                            <a class="px-4 py-2 btn btn-dark " href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-md-6 col-12 ">
-                <div class="d-flex justify-content-center align-items-center">
-                    <div class="card" style="width: 18rem;">
-                        <img alt="..."
-                             class="card-img-top" src="./images/4.png">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-
-                                <p class="small text-grey "><i class="fa-solid fa-book-open-reader"></i> : 5000 </p>
-                                <p class="small text-grey "> March 3, 2020 </p>
-                            </div>
-                            <h5 class=" mt-3 card-title">Wordpress Developer</h5>
-                            <p class="card-text mt-2 mb-3">Some quick example text to build on the card title and make
-                                up the bulk of
-                                the card's content.</p>
-                            <a class="px-4 py-2 btn btn-dark" href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+ <?php
+            }}
+?>
+           
 
 </section>
 
@@ -790,7 +725,7 @@
         </svg>
     </div>
 
-    <div class="container text-center fw-bold common-title ">
+    <div class="container text-center fw-bold common-title " id="">
         <h2 class="common-heading text-white ">Contact Us</h2>
         <hr class="w-25 mx-auto">
     </div>
@@ -821,7 +756,7 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="message" required
                               placeholder="Enter your message " rows="3"></textarea>
                 </div>

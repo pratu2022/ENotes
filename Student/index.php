@@ -71,7 +71,7 @@ require("../connect.php");
                         <div class="card p-4 text-white mt-3"  style='width: 18rem;'>
                         <div class="card-body">
                         <h5 class='card-title'>Classmate</h5>
-                        <h2>Total Courses</h2>
+                        <h2>Total Classmates</h2>
                         <h5>
                             <?php
                              $qs = "SELECT * FROM tblstudent";
@@ -88,7 +88,7 @@ require("../connect.php");
                         <div class="card p-4 text-white mt-3"  style='width: 18rem;'>
                         <div class="card-body">
                         <h5 class='card-title'>Faculty</h5>
-                        <h2>Total Courses</h2>
+                        <h2>Total Faculty</h2>
                         <h5>
                             <?php
                              $qs = "SELECT * FROM tblfaculty";
@@ -105,7 +105,7 @@ require("../connect.php");
                         <div class="card p-4 text-white mt-5"  style='width: 18rem;'>
                         <div class="card-body">
                         <h5 class='card-title'>Approved</h5>
-                        <h2>Total Courses</h2>
+                        <h2>Total Approve</h2>
                         <h5>
                             <?php
                              $qs = "SELECT * FROM tbluploadassign WHERE uploadedby_stud = '$_SESSION[name]' AND status = 'approved'";
@@ -122,7 +122,7 @@ require("../connect.php");
                         <div class="card p-4 text-white mt-5"  style='width: 18rem;'>
                         <div class="card-body">
                         <h5 class='card-title'>Pending</h5>
-                        <h2>Total Courses</h2>
+                        <h2>Total Pending</h2>
                         <h5>
                             <?php
                              $qs = "SELECT * FROM tbluploadassign WHERE uploadedby_stud = '$_SESSION[name]' AND status = 'pending'";
@@ -139,7 +139,7 @@ require("../connect.php");
                         <div class="card p-4 text-white mt-5"  style='width: 18rem;'>
                         <div class="card-body">
                         <h5 class='card-title'>Denied</h5>
-                        <h2>Total Courses</h2>
+                        <h2>Total Denied</h2>
                         <h5>
                             <?php
                              $qs = "SELECT * FROM tbluploadassign WHERE uploadedby_stud = '$_SESSION[name]' AND status = 'denied'";

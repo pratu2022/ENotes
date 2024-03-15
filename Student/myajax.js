@@ -9,7 +9,7 @@ $(document).ready(function(){
             method:'get',
              dataType: 'json',
             success: function (response) {
-                console.log(response);
+                //console.log(response);
                 x = response;
                 for(i=0;i<x.length;i++)
                 {
@@ -53,6 +53,7 @@ $(document).ready(function(){
 
 
 });
+// jquery end
 
 function myfunc1()
 {
@@ -70,7 +71,7 @@ function myfunc1()
             for(i=0;i<x.length;i++)
             {
                 // output += "<tr><td>"+x[i].fac_name+"</td><td>"+x[i].fac_phone+"</td><td>"+x[i].fac_email+"</td></tr>";
-                output+='<div class="col-sm-5">';
+                    output+='<div class="col-sm-5">';
                     output+='<div class="card mt-5" style="width: 33rem; margin-right:39pc;">';
                     output+='<div class="row">';
                     output+='<div class="col-sm-3">';
