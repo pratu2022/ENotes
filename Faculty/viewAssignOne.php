@@ -259,7 +259,7 @@ include('../connect.php');
 
                    <div id="postcomment" class="p-5">
         <!-- <h4 id="commenttext">Comments</h4> -->
-        <h4 id="commenttext">Comment:</h4>
+        <h4 id="commenttext">Reply:</h4>
         <form method="post">
           <input type="hidden" name="commentid" id="commentid">
         <div class="form-floating">
@@ -271,7 +271,7 @@ include('../connect.php');
         <label for="floatingTextarea2">Comments</label>
         </div>
         <div class="mt-2 mb-2">
-            <button type="submit" class="button" name="submit_assign">Comment</button>
+            <button type="submit" class="button" name="submit_assign">Reply</button>
         </div> 
        
         </form>

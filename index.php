@@ -71,6 +71,9 @@
                   <a class="nav-link " href="#online_services">Service</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link " href="courses.php">Courses</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link " aria-disabled="true">Contact</a>
                 </li>
               </ul>
@@ -671,7 +674,7 @@
 <!--testimonail section ends-->
 <?php
  include("connect.php");
-$query = "SELECT * FROM tblsubject";
+$query = "SELECT * FROM tblsubject LIMIT 4";
 $query_run = mysqli_query($mysql, $query);
  ?>
 <!-- Pricing section -->
@@ -682,7 +685,7 @@ $query_run = mysqli_query($mysql, $query);
     </div>
 
     <div class="container my-5">
-        <div class="row g-5  ">
+        <div class="row g-5">
         <?php
          if (mysqli_num_rows($query_run) > 0) {
             foreach ($query_run as $row) {
@@ -696,7 +699,7 @@ $query_run = mysqli_query($mysql, $query);
                             <div class="d-flex justify-content-between">
 
                                 <p class="small text-grey "><i class="fa-solid fa-book-open-reader"></i></p>
-                                <p class="small text-grey "> March 3, 2020 </p>
+                                <p class="small text-grey "><?php  echo $row['ac_year']?></p>
                             </div>
                             <h5 class="card-title mt-3"><?php  echo $row['subject_name']?></h5>
 
@@ -709,8 +712,6 @@ $query_run = mysqli_query($mysql, $query);
  <?php
             }}
 ?>
-           
-
 </section>
 
 <!--    pricing section end -->
@@ -815,40 +816,20 @@ $query_run = mysqli_query($mysql, $query);
                 <div class="row">
                     <div class="col-lg-2 col-md-6 col-6">
                         <div class="footer-links">
-                            <h4 class="text-white mt-5 mb-3">About</h4>
-                            <ul class="text-light-grey list-unstyled d-flex flex-column gap-2">
-                                <li>Our Story</li>
-                                <li>Our Story</li>
-                                <li>Our Story</li>
-                                <li>Our Story</li>
-
-                            </ul>
+                            <h4 class="text-white mt-5 mb-3">Administration office</h4>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7440.639218419649!2d72.79733804018001!3d21.179458826206744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04ded06cb9647%3A0x42f1f4e6971d85e9!2sAthwalines%2C%20Athwa%2C%20Surat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1710609745049!5m2!1sen!2sin" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
 
                     <div class="col-lg-2 col-md-6 col-6">
                         <div class="footer-links">
-                            <h4 class="text-white mt-5 mb-3">About</h4>
-                            <ul class="text-light-grey list-unstyled d-flex flex-column gap-2">
-                                <li>Our Story</li>
-                                <li>Our Story</li>
-                                <li>Our Story</li>
-                                <li>Our Story</li>
-
-                            </ul>
+                           
                         </div>
                     </div>
 
                     <div class="col-lg-2 col-md-6 col-6">
                         <div class="footer-links">
-                            <h4 class="text-white mt-5 mb-3">About</h4>
-                            <ul class="text-light-grey list-unstyled d-flex flex-column gap-2">
-                                <li>Our Story</li>
-                                <li>Our Story</li>
-                                <li>Our Story</li>
-                                <li>Our Story</li>
-
-                            </ul>
+                            
                         </div>
                     </div>
 
@@ -860,6 +841,12 @@ $query_run = mysqli_query($mysql, $query);
                                        aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <span class="button" id="basic-addon2">Subscribe</span>
                             </div>
+                            <h4 class="text-white mt-5 mb-3">About</h4>
+                            <ul class="text-light-grey list-unstyled d-flex flex-column gap-2">
+                                <li>About Us</li>
+                                <li>Privacy Policy</li>
+                                <li>Noteswap Teams</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

@@ -18,6 +18,7 @@ require("sidebar.php");
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />  
         <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css"> 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         
 </head>
 <style>
@@ -69,8 +70,16 @@ require("sidebar.php");
             <div class="container mt-2">
                
                 <div class="row">
+                
                     <div class="col-md-12">    
-                        <button class="button mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Faculty Registration</button>
+                        <div class="row">
+                            <div class="col-md-6">
+                            <form action="export.php" method="post">
+                            <button class="button mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Faculty Registration</button>
+                            <button type="submit" id="export_data" name='export_data' value="Export to excel" class="btn btn-success">Export to excel</button>
+                            </form>
+                            </div>
+                        </div>
                         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title" id="offcanvasRightLabel">Faculty Registration</h5>
@@ -85,7 +94,7 @@ require("sidebar.php");
                                         </div>           
                                            <div class="form-group mt-3">
                                                <input type="text" class="form-control" placeholder="Enter Faculty Name"
-                                                   name="fac_name" required/>
+                                                   name="fac_name"  required/>
                                            </div>
                                            <div class="form-group mt-3">
                                                <input type="phone" class="form-control"

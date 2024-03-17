@@ -139,9 +139,6 @@ require("sidebar.php");
 
 <?php
 require("../connect.php");
-$currentDate = date("Y-m-d");
-// $fac_date = "SELECT * FROM tblfaculty WHERE date = '$currentDate'";
-// echo $qs;
 $fac = "SELECT id FROM tblfaculty ORDER BY id";
 $stud = "SELECT id FROM tblstudent ORDER BY id";
 
@@ -161,33 +158,10 @@ $stud = "SELECT id FROM tblstudent ORDER BY id";
  $student = ($studnrow/$total)*100;
   // echo $faculty;
  ?>
- <!-- <br/> -->
- <?php
-//  $factnrow = mysqli_num_rows($fac_qttl);
-//    echo $factnrow;
-//  $perf = ($facnrow/$factnrow) * 100;
- ?>
- <!-- <br/> -->
 
 
-<?php
-// require("../connect.php");
-// $currentate = date("Y-m-d");
-// $qss = "SELECT * FROM tblstudent WHERE date = '$currentate'";
-// echo $qs;
 
-//  $ttlqss = mysqli_query($mysql, $qss);
-//  $ttlqtt = mysqli_query($mysql, $qtt);
 
-// $rowqss = mysqli_num_rows($ttlqss);
-//  echo $rowqss;
- ?>
- <!-- <br/> -->
- <?php
-// $rowqtt = mysqli_num_rows($ttlqtt);
-//  echo $rowqtt;
- //$perstud = ($rowqss/$rowqtt) * 100;
- ?>
 
 <script>
 window.onload = function () {

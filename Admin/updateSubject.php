@@ -74,8 +74,37 @@ require("sidebar.php");
                         <input type="text" class="form-control"placeholder="Enter Subject Name" name="subject_name"  value="<?php  echo $row['subject_name']; ?>" required/>
                         </div>
                         <div class="form-group mt-3">
+                             <select class="form-select" name="subject_type">
+                             <option selected disabled>Select Subject Type</option>
+                             <option value="development">Development</option>
+                             <option value="language">Language</option>
+                             <option value="theroy">Theroy</option>
+                             </select>
+                             </div>
+                        <div class="form-group mt-3">
                         <input type="text" class="form-control"placeholder="Enter Subject Short-Name" name="short_name"  value="<?php  echo $row['short_name']; ?>" required/>
                         </div>
+                        <?php
+                                                        // Get the current year
+                                                        $currentYear = date("Y");
+
+                                                        // Define the range of years you want to display (e.g., from current year to 10 years ago)
+                                                        $startYear = $currentYear;
+                                                        $endYear = $currentYear - 10;
+
+                                                        // Generate an array of years
+                                                        // $years = range($startYear, $endYear);
+                                                        $years = range($endYear, $startYear);
+
+                                                        // Reverse the array to have the years displayed in descending order
+                                                        $years = array_reverse($years);
+                                                        ?>
+                                                        <select class="form-select mt-3" name="year" id="year">
+                                                        <option selected disabled>Select Academic Year</option>
+                                                            <?php foreach ($years as $year): ?>
+                                                                <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
                         <div class="form-group mt-3">
                         <select class="form-select " aria-label="Default select example" name="fac_name">
                         <option selected disabled>Select Faculty</option>

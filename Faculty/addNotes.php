@@ -80,7 +80,7 @@ require("sidebar.php");
                                                 <?php
                                                     if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) 
                                                     {
-                                                        echo"<input type='text' name='uploadby' class ='form-control' value = '$_SESSION[name]'>";
+                                                        echo"<input type='text' name='uploadby' class ='form-control' value = '$_SESSION[name]' disabled>";
                                                     } 
                                                 ?>
                                             </div> 

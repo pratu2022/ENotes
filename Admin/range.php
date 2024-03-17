@@ -5,6 +5,9 @@ if(isset($_POST["From"], $_POST["to"]))
     $result = '';
     $query = "SELECT * FROM tblfaculty WHERE register_date BETWEEN '".$_POST["From"]."' AND '".$_POST["to"]."'";
     $sql = mysqli_query($mysql, $query);
+    $filename = "phpzag_data_export_".date('Ymd') . ".xls";			
+	header("Content-Type: application/vnd.ms-excel");
+	header("Content-Disposition: attachment; filename=\"$filename\"");	
     $result .='
     <table class="table table-striped" id="myTable">
     <thead>

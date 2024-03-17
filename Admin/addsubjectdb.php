@@ -15,7 +15,7 @@ include("../connect.php");
 if(isset($_POST['addsubject']))
 {
     // $query = "INSERT INTO `tblsubject`(`id`, `subjectname`) VALUES (null,'$_POST[subject]')";
-    $query = "INSERT INTO `tblsubject`(`id`, `subject_code`, `subject_name`, `short_name`, `allocated_faculty`) VALUES (null,$_POST[subject_code],'$_POST[subject_name]','$_POST[short_name]','$_POST[fac_name]')";
+    $query = "INSERT INTO `tblsubject`(`id`, `subject_code`, `subject_name`, `short_name`, `allocated_faculty`,`ac_year`,`subject_type`) VALUES (null,$_POST[subject_code],'$_POST[subject_name]','$_POST[short_name]','$_POST[fac_name]','$_POST[year]','$_POST[subject_type]')";
     $query_run = mysqli_query($mysql,$query);
 
     if($query_run)
@@ -64,7 +64,7 @@ if(isset($_POST['upsubject']))
     
 
     // $query = "UPDATE `tblsubject` SET `subjectname`='$subname' WHERE id = $id";
-    $query = "UPDATE `tblsubject` SET `subject_code`= '$_POST[subject_code]',`subject_name`='$_POST[subject_name]',`short_name`='$_POST[short_name]',`allocated_faculty`='$_POST[fac_name]' WHERE id = $id";
+    $query = "UPDATE `tblsubject` SET `subject_code`= '$_POST[subject_code]',`subject_name`='$_POST[subject_name]',`short_name`='$_POST[short_name]',`allocated_faculty`='$_POST[fac_name]',`ac_year`='$_POST[year]',`subject_type` = '$_POST[subject_type]' WHERE id = $id";
     $query_run = mysqli_query($mysql, $query);
 
     if ($query_run) {

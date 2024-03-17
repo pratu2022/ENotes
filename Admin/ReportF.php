@@ -61,20 +61,21 @@ require("sidebar.php");
 <br/>
 <div id="content">
 <h1 class="display-6">Faculty</h1>
+<div class="row">
+<div class="col-md-6">
+    <input type="text" name="From" id="From" class="form-control ml-5 mt-2" placeholder="From Date"/>
+</div>
+<div class="col-md-4">
+    <input type="text" name="to" id="to" class="form-control ml-5 mt-2" placeholder="To Date"/>
+</div>
+<div class="col-md-2">
+    <input type="button" name="range" id="range" value="Range" class="button ml-5 mt-2"/>
+</div>
+</div>
     <hr class="mt-3">
 <div class="container">
 
-<div class="row">
-<div class="col-md-6">
-    <input type="text" name="From" id="From" class="form-control" placeholder="From Date"/>
-</div>
-<div class="col-md-4">
-    <input type="text" name="to" id="to" class="form-control" placeholder="To Date"/>
-</div>
-<div class="col-md-2">
-    <input type="button" name="range" id="range" value="Range" class="button"/>
-</div>
-</div>
+
 <div class="clearfix"></div>
 <br/>
 <?php
@@ -151,6 +152,7 @@ $sql = mysqli_query($mysql, $query);
   $(document).ready( function () {
     $('#myTable').DataTable();
   });
+  
 </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
