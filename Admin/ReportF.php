@@ -22,7 +22,7 @@ require("sidebar.php");
 </head><style>
     #content {
         margin-left: 250px;
-         padding: 15px; 
+        padding-left: 5pc; 
     }
 
 .button {
@@ -60,9 +60,12 @@ require("sidebar.php");
 <body>
 <br/>
 <div id="content">
-<h1 class="display-6">Faculty</h1>
+
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-2">
+<h1 class="display-6">Faculty</h1>
+</div>
+<div class="col-md-4">
     <input type="text" name="From" id="From" class="form-control ml-5 mt-2" placeholder="From Date"/>
 </div>
 <div class="col-md-4">
@@ -72,9 +75,92 @@ require("sidebar.php");
     <input type="button" name="range" id="range" value="Range" class="button ml-5 mt-2"/>
 </div>
 </div>
-    <hr class="mt-3">
+<hr class="mt-3">
 <div class="container">
+<div class="row">
+                
+                <div class="col-md-12">    
+                    <div class="row">
+                        <div class="col-md-6">
+                        <form action="export.php" method="post">
+                        <button class="button mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Faculty Registration</button>
+                        <button type="submit" id="export_data" name='export_data' value="Export to excel" class="btn btn-success"><i class="fa-solid fa-file-excel" style="color:#fff;"></i></button>
+                        </form>
+                        </div>
+                    </div>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Faculty Registration</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                    <form action="addfacdb.php" method="POST" enctype="multipart/form-data">
 
+                                     <div
+                                        style="border:1px solid black; height:150px; width:150px; background:#F5FAFF;margin-left:6pc;">
+                                        <img id="output" width="150" height="150">
+                                    </div>           
+                                       <div class="form-group mt-3">
+                                           <input type="text" class="form-control" placeholder="Enter Faculty Name"
+                                               name="fac_name"  required/>
+                                       </div>
+                                       <div class="form-group mt-3">
+                                           <input type="phone" class="form-control"
+                                               placeholder="Enter Faculty Phone" name="fac_phone" required />
+                                       </div>
+                                       <div class="form-group mt-3">
+                                           <input type="email" class="form-control"
+                                               placeholder="Enter Faculty Email" name="fac_email" required />
+                                       </div>
+                                       <div class="form-group mt-3">
+                                           <textarea name="fac_add" class="form-control" id="" cols="80" rows="3"
+                                               placeholder="Enter Faulty Address" required></textarea>
+                                       </div>
+
+                                       <div class="form-group mt-3">
+                                           <input type="text" class="form-control"
+                                               placeholder="Enter Faculty Username" name="fac_username"required />
+                                       </div>
+
+                                       <div class="form-group mt-3">
+                                           <input type="password" class="form-control"
+                                               placeholder="Enter Faculty Password" name="fac_password" required />
+                                       </div>
+                                       
+                                       <!-- <input type="date" name="date" id="event_start_date" class="form-control onlydatepicker" placeholder="Event start date"> -->
+
+                                       
+                                       <div class="form-check  form-check-inline">
+                                           <input class="form-check-input" type="radio" name="fac_gender"
+                                               id="flexRadioDefault1" value = "Male">
+                                           <label class="form-check-label" for="flexRadioDefault1">
+                                               Male
+                                           </label>
+                                       </div>
+                                       <div class="form-check form-check-inline">
+                                           <input class="form-check-input" type="radio" name="fac_gender"
+                                               id="flexRadioDefault2" value = "Female" checked>
+                                           <label class="form-check-label" for="flexRadioDefault2">
+                                               Female
+                                           </label>
+                                       </div>
+                                       <div class="form-group mt-3">
+                                           <input type="file" name="fac_image" id="upload_image" required
+                                               class="form-control"
+                                               onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+                                       </div>
+                                       
+                                       <div class="form-group mt-3">
+                                           <input type="submit" value="Submit" class="button"
+                                               name="save_fac_image">
+                                       </div>
+                                       
+                                   </form>
+                    </div>
+                    </div>
+                   
+                </div>
+            </div>
 
 <div class="clearfix"></div>
 <br/>

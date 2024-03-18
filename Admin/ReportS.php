@@ -22,7 +22,7 @@ require("sidebar.php");
 </head><style>
     #content {
         margin-left: 250px;
-         padding: 15px; 
+        padding-left: 5pc; 
     }
 
 .button {
@@ -60,22 +60,110 @@ require("sidebar.php");
 <body>
 <br/>
 <div id="content">
-<h1 class="display-6">Student</h1>
-    <hr class="mt-3">
-<div class="container">
 
 <div class="row">
-<div class="col-md-6">
-    <input type="text" name="From" id="From" class="form-control" placeholder="From Date"/>
+<div class="col-md-2">
+<h1 class="display-6">Student</h1>
 </div>
 <div class="col-md-4">
-    <input type="text" name="to" id="to" class="form-control" placeholder="To Date"/>
+    <input type="text" name="From" id="From" class="form-control ml-5 mt-2" placeholder="From Date"/>
+</div>
+<div class="col-md-4">
+    <input type="text" name="to" id="to" class="form-control ml-5 mt-2" placeholder="To Date"/>
 </div>
 <div class="col-md-2">
-    <input type="button" name="range" id="range" value="Range" class="button"/>
+    <input type="button" name="range" id="range" value="Range" class="button ml-5 mt-2"/>
 </div>
 </div>
-<div class="clearfix"></div>
+<hr class="mt-3">
+<div class="container">
+<div class="row">
+                
+                <div class="col-md-12">    
+                    <div class="row">
+                        <div class="col-md-6">
+                        <form action="exports.php" method="post">
+                        <button class="button mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Student Registration</button>
+                        <button type="submit" id="export_data" name='export_data' value="Export to excel" class="btn btn-success"><i class="fa-solid fa-file-excel" style="color:#fff;"></i></button>
+                        </form>
+                        </div>
+                    </div>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Student Registration</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                    <form action="addstuddb.php" method="POST" enctype="multipart/form-data">
+
+                                     <div
+                                        style="border:1px solid black; height:150px; width:150px; background:#F5FAFF;margin-left:6pc;">
+                                        <img id="output" width="150" height="150">
+                                    </div>           
+                                       <div class="form-group mt-3">
+                                           <input type="text" class="form-control" placeholder="Enter Student Name"
+                                               name="stud_name"  required/>
+                                       </div>
+                                       <div class="form-group mt-3">
+                                           <input type="phone" class="form-control"
+                                               placeholder="Enter Student Phone" name="stud_phone" required />
+                                       </div>
+                                       <div class="form-group mt-3">
+                                           <input type="email" class="form-control"
+                                               placeholder="Enter Student Email" name="stud_email" required />
+                                       </div>
+                                       <div class="form-group mt-3">
+                                           <textarea name="stud_add" class="form-control" id="" cols="80" rows="3"
+                                               placeholder="Enter Student Address" required></textarea>
+                                       </div>
+
+                                       <div class="form-group mt-3">
+                                           <input type="text" class="form-control"
+                                               placeholder="Enter Student Username" name="stud_username"required />
+                                       </div>
+
+                                       <div class="form-group mt-3">
+                                           <input type="password" class="form-control"
+                                               placeholder="Enter Student Password" name="stud_password" required />
+                                       </div>
+                                       
+                                       <!-- <input type="date" name="date" id="event_start_date" class="form-control onlydatepicker" placeholder="Event start date"> -->
+
+                                       
+                                       <div class="form-check  form-check-inline">
+                                           <input class="form-check-input" type="radio" name="stud_gender"
+                                               id="flexRadioDefault1" value = "Male">
+                                           <label class="form-check-label" for="flexRadioDefault1">
+                                               Male
+                                           </label>
+                                       </div>
+                                       <div class="form-check form-check-inline">
+                                           <input class="form-check-input" type="radio" name="stud_gender"
+                                               id="flexRadioDefault2" value = "Female" checked>
+                                           <label class="form-check-label" for="flexRadioDefault2">
+                                               Female
+                                           </label>
+                                       </div>
+                                       <div class="form-group mt-3">
+                                           <input type="file" name="stud_image" id="upload_image" required
+                                               class="form-control"
+                                               onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+                                       </div>
+                                       
+                                       <div class="form-group mt-3">
+                                           <input type="submit" value="Submit" class="button"
+                                               name="save_stud_image">
+                                       </div>
+                                       
+                                   </form>
+                    </div>
+                    </div>
+                   
+                </div>
+            </div>
+
+
+            <div class="clearfix"></div>
 <br/>
 <?php
 include("../connect.php");
@@ -151,6 +239,7 @@ $sql = mysqli_query($mysql, $query);
   $(document).ready( function () {
     $('#myTable').DataTable();
   });
+  
 </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

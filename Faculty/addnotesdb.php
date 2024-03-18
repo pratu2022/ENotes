@@ -56,7 +56,7 @@ for($i=0;$i<$length;$i++)
     {
         $notes = $_FILES['notes']['name'][$i];
 
-        $query = "INSERT INTO `tblnotes`(`srno`, `UploadedBy`, `Uploadedon`, `Subject`, `Notes`, `Type`, `Description`,`Title`) VALUES (null,'$uploadby','$date','$subject','$notes','$filetype','$desci','$title')";
+        $query = "INSERT INTO `tblnotes`(`srno`,`sub_id`, `UploadedBy`, `Uploadedon`, `Notes`, `Type`, `Description`,`Title`) VALUES (null,'$subject','$uploadby','$date','$notes','$filetype','$desci','$title')";
         $query_run = mysqli_query($mysql,$query);
 
             if($query_run)

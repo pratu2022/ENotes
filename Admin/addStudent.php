@@ -63,7 +63,6 @@ require("sidebar.php");
                 <div class="row">
                     <div class="col-md-12">
                     <button class="button mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Student Registration</button>
-
                             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                             <div class="offcanvas-header">
                                 <h5 class="offcanvas-title" id="offcanvasRightLabel">Student Registration</h5>
@@ -71,10 +70,7 @@ require("sidebar.php");
                             </div>
                             <div class="offcanvas-body">
                             <form action="addstuddb.php" method="POST" enctype="multipart/form-data">
-                                            <!-- <div class="form-group mt-3">
-                                                <input type="text" class="form-control" placeholder="Register Number"
-                                                    name="regno" value="<?php //$re_no ?>" />
-                                            </div> -->
+                                            
                                             <div
                                             style="border:1px solid black; height:150px; width:150px; background:#F5FAFF;margin-left:6pc;">
                                             <img id="output" width="150" height="150">
@@ -135,7 +131,7 @@ require("sidebar.php");
                             </div>
                             </div>
                                  <!-- Table -->
-                <?php
+                        <?php
                             include("../connect.php");
                             $query = "SELECT * FROM tblstudent";
                             $query_run = mysqli_query($mysql, $query);

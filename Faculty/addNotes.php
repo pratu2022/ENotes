@@ -76,16 +76,7 @@ require("sidebar.php");
                         <div class="offcanvas-body">
                         	<form action="addnotesdb.php" method="POST" enctype="multipart/form-data">
 
-                                            <div class="form-group mt-3">
-                                                <?php
-                                                    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) 
-                                                    {
-                                                        echo"<input type='text' name='uploadby' class ='form-control' value = '$_SESSION[name]' disabled>";
-                                                    } 
-                                                ?>
-                                            </div> 
-                                            
-                                            <div class="form-group mt-3">
+                            <div class="form-group mt-3">
                                             <select class="form-select " aria-label="Default select example" name="subject">
                                             <option selected disabled>Select Subject</option>
                                                 <?php
@@ -96,13 +87,23 @@ require("sidebar.php");
                                                 if (mysqli_num_rows($query_run) > 0) {
 
                                                     foreach ($query_run as $row) {
-                                                            echo"<option value='$row[subject_name]'>$row[subject_name]</option>";   
+                                                            echo"<option value='$row[id]'>$row[subject_name]</option>";   
                                                     }
                                                 }
                                                 ?>
                                                 <select>
-                                               
                                             </div>
+
+                                            <div class="form-group mt-3">
+                                                <?php
+                                                    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) 
+                                                    {
+                                                        echo"<input type='hidden' name='uploadby' class ='form-control' value = '$_SESSION[name]'>";
+                                                    } 
+                                                ?>
+                                            </div> 
+                                            
+                                            
 
                                             <div class="form-group mt-3" class="dropzone" id="dropzonewidget">
                                                 <input type="file" class="form-control" name="notes[]" id="f" multiple required />
@@ -139,8 +140,13 @@ require("sidebar.php");
 
                                         <?php
                             include("../connect.php");
-                            $query = "SELECT * FROM tblnotes WHERE UploadedBy = '$_SESSION[name]'";
+                            //$query = "SELECT * FROM tblnotes WHERE UploadedBy = '$_SESSION[name]'";
+                            $query = "SELECT * FROM tblsubject
+                            INNER JOIN tblnotes ON tblsubject.id =tblnotes.sub_id WHERE UploadedBy = '$_SESSION[name]'";
                             $query_run = mysqli_query($mysql, $query);
+                            // $result = mysqli_num_rows($query_run);
+                            // echo $result;
+
                             ?>
 
                             <div class="row mt-3">
@@ -161,11 +167,19 @@ require("sidebar.php");
                                 if (mysqli_num_rows($query_run) > 0) {
 
                                     foreach ($query_run as $row) {
+                                        // echo "<pre>";
+                                        // print_r($row);
+                                        // echo "</pre>";
                                         ?>
+                                        
                                                 <tr>
                                                     <td><?php  echo $row['UploadedBy']?></td>
                                                     <td><?php  echo $row['Uploadedon']?></td>
-                                                    <td><?php  echo $row['Subject']?></td>
+                                                    <?php 
+                                                    $query = "SELECT * FROM tblnotes WHERE UploadedBy = '$_SESSION[name]'";
+                                                    $query_run = mysqli_query($mysql, $query);
+                                                    ?>
+                                                    <td><?php  echo $row['subject_name']?></td>
                                                     <td><?php  echo $row['Notes']?></td>
                                                     
                                                     <td>
