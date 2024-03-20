@@ -394,11 +394,11 @@ echo"<option value='$row[subject_type]'>$row[subject_type]</option>";
     </div>
 
 
-          `<?php
- include("connect.php");
-$query = "SELECT * FROM tblsubject LIMIT 4";
-$query_run = mysqli_query($mysql, $query);
- ?>
+    <?php
+    include("connect.php");
+    $query = "SELECT * FROM tblsubject LIMIT 4";
+    $query_run = mysqli_query($mysql, $query);
+    ?>
     <div class="container">
         <div class="row" id="tbody">
         <?php

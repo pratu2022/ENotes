@@ -126,8 +126,23 @@ require("sidebar.php");
                                             <textarea name="desci" cols="20" rows="4"
                                                 placeholder="Enter Note Desciption" class="form-control" required></textarea>
                                         </div>
+                                        <?php
+                                        include("../connect.php");
+                                        $query = "SELECT * FROM tblnotes WHERE UploadedBy = '$_SESSION[name]'";
+                                        $query_run = mysqli_query($mysql, $query);
+                                        $result = mysqli_num_rows($query_run);
+                                        echo $result;
+                                        ?>
                                         <div class="form-group">
-                                            <input type="text" name="title" class="form-control" placeholder="Enter Title" id="">
+                                                <select class="form-select" aria-label="Default select example"
+                                                name="title" required>
+                                                <option selected disabled>Select Title</option>
+                                                <option value="Chapter 1">Chapter 1</option>
+                                                <option value="Chapter 2">Chapter 2</option>
+                                                <option value="Chapter 3">Chapter 3</option>
+                                                <option value="Chapter 4">Chapter 4</option>
+                                                <option value="Chapter 5">Chapter 5</option>
+                                                <select>
                                         </div>
                                     
                                     <div class="form-group mt-3">
@@ -138,7 +153,7 @@ require("sidebar.php");
                         </div>
                         </div>
 
-                                        <?php
+                            <?php
                             include("../connect.php");
                             //$query = "SELECT * FROM tblnotes WHERE UploadedBy = '$_SESSION[name]'";
                             $query = "SELECT * FROM tblsubject
@@ -146,7 +161,6 @@ require("sidebar.php");
                             $query_run = mysqli_query($mysql, $query);
                             // $result = mysqli_num_rows($query_run);
                             // echo $result;
-
                             ?>
 
                             <div class="row mt-3">

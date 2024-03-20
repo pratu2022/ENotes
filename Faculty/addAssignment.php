@@ -78,7 +78,7 @@ require("sidebar.php");
                                                 <?php
                                                     if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) 
                                                     {
-                                                        echo"<input type='text' name='uploadby' class ='form-control' value = '$_SESSION[name]' disabled>";
+                                                        echo"<input type='hidden' name='uploadby' class ='form-control' value = '$_SESSION[name]'>";
                                                     } 
                                                 ?>
                                             </div> 
@@ -128,7 +128,13 @@ require("sidebar.php");
                                                 placeholder="Enter Note Desciption" class="form-control" required></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="title" class="form-control" placeholder="Enter Title" id="">
+                                                <select class="form-select" aria-label="Default select example"
+                                                name="title" required>
+                                                <option selected disabled>Select Title</option>
+                                                <option value="Assignment 1">Assignment 1</option>
+                                                <option value="Assignment 2">Assignment 2</option>
+                                                <option value="Assignment 3">Assignment 3</option>
+                                                <select>
                                         </div>
                                     
                                     <div class="form-group mt-3">
@@ -191,13 +197,6 @@ require("sidebar.php");
                                                     ><i class="fa-solid fa-eye icon-button mt-2"></i></a>
                                                     </form>
                                                     </td>
-                                                    <!-- Delete -->
-                                                    <!-- <form action="addstuddb.php" method="POST" >
-                                                            <input type="hidden" name="delete_id" value="<?php //echo $row['id'] ?>">
-                                                            <input type="hidden" name="del_stud_image"
-                                                            value="<?php //echo $row['stud_image'] ?>">
-                                                            <button type="submit"  class="icon-button" name="delete_stud_image"><i class="fa-solid fa-trash" style="color: #f70808;"></i></button>
-                                                        <form> -->
                                                     </div>
                                                     
                                                 

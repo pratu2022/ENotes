@@ -20,8 +20,8 @@ require("sidebar.php");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="myajaxcourse.js"></script>
-    <title>Document</title>
+<script src="myajaxadmincourse.js"></script>    
+<title>Document</title>
     <style>
      #content {
         margin-left: 250px;
@@ -82,11 +82,11 @@ echo"<option value='$row[subject_type]'>$row[subject_type]</option>";
 </select>
 </div>
 <div class="col-sm-4">
-<select class="form-select mt-3 w-75" aria-label="Default select example" name="type" id="type" onchange="myfunc2()">
+<select class="form-select mt-3 w-75" aria-label="Default select example" name="faculty" id="faculty" onchange="myfunc3()">
   <option selected disabled>Select Faculty</option>
   <?php
  include("../connect.php");
-$query = "SELECT  allocated_faculty FROM tblsubject";
+$query = "SELECT DISTINCT allocated_faculty FROM tblsubject";
  $query_run = mysqli_query($mysql, $query);
 if (mysqli_num_rows($query_run) > 0) {
 foreach ($query_run as $row) {
@@ -116,9 +116,6 @@ $years = array_reverse($years);
     </div>
 </div>
 </div>
-
-
-
 
 
   

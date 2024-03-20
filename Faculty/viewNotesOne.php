@@ -278,7 +278,7 @@ include('../connect.php');
             ?>
           <div id="postcomment" class="p-5">
         <!-- <h4 id="commenttext">Comments</h4> -->
-        <h4 id="commenttext">Reply:</h4>
+        <h4 id="commenttext">Comment:</h4>
         <form method="post">
           <input type="hidden" name="commentid" id="commentid">
         <div class="form-floating">
