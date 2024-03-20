@@ -35,11 +35,15 @@ if(isset($_POST['btn-del-sub']))
     $id = $_POST['del_id'];
     //$sub_name = $_POST['del_sub'];
 
-    $query = "DELETE FROM tblsubject WHERE id = '$id'";
+    //$query = "DELETE FROM tblsubject WHERE id = '$id'";
+    $query = "DELETE FROM tblsubject INNER JOIN tblnotes ON tblsubject.id =tblnotes.sub_id WHERE tblsubject.id = '$id'";
+    //print_r($query);
     $query_run = mysqli_query($mysql, $query);
 
     if ($query_run) {
-
+        echo "<pre>";
+        print_r($query_run);
+        echo "</pre>";
         ?>
         <script>
             swal('Good Job!', "Deleted Successfully!", 'success').then((value) => {
