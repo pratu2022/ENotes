@@ -1,8 +1,5 @@
 $(document).ready(function(){
-    $("#type").on('change',function(){
-      var value = $(this).val();
-     // alert(value);
-    })
+
     //show_Data();
     function show_Data()
     {
@@ -110,9 +107,9 @@ function myfunc1()
 
 function myfunc2()
 {
-    let output = ''
+    let output = '';
     let given = $('#type').val();
-    //alert(given);
+    alert(given);
     mydata = {name: given};
 
     $.ajax({
@@ -132,9 +129,10 @@ function myfunc2()
                     output+='<p class="small text-grey "><i class="fa-solid fa-book-open-reader"></i></p>';
                     output+='<p class="small text-grey">'+x[i].ac_year+'</p>';
                     output+='</div>';
-                    output+='<h5 class="card-title" style="margin-left:1pc;">'+x[i].subject_name+'</h5>';
+                    output+='<h5 class="card-title text-info" style="margin-left:1pc;">'+x[i].subject_name+'</h5>';
                     output+='<p class="card-text  mb-4" style="margin-left:1pc;">';
-                    output+=''+x[i].allocated_faculty+'</p>';
+                    //output+=''+x[i].allocated_faculty+'</p>';
+                    output+='<a class="btn btn-dark" href="#">Read More</a>';
                     output+='</div>';
                     output+='</div>';
                     output+='</div>';

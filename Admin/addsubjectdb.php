@@ -33,21 +33,33 @@ if(isset($_POST['addsubject']))
 if(isset($_POST['btn-del-sub']))
 {
     $id = $_POST['del_id'];
-    //$sub_name = $_POST['del_sub'];
+    $sub_name = $_POST['del_sub'];
+    echo $sub_name;
 
-    //$query = "DELETE FROM tblsubject WHERE id = '$id'";
-    $query = "DELETE FROM tblsubject INNER JOIN tblnotes ON tblsubject.id =tblnotes.sub_id WHERE tblsubject.id = '$id'";
+    $query = "DELETE FROM tblsubject WHERE id = '$id'";
+    //$query = "DELETE FROM tblnotes INNER JOIN tblsubject ON tblsubject.id = tblnotes.sub_id WHERE id = '$id'";
+    // $query = "DELETE FROM tblsubject
+    // FULL JOIN tblnotes ON tblsubject.id =tblnotes.sub_id WHERE id = '$id'";
+    // $query = "SELECT Uploadedon
+    // FROM tblnotes t1 
+    // LEFT JOIN tblsubject t2 ON t1.sub_id = t2.id
+    // WHERE subject_name = '$sub_name'";
     //print_r($query);
+    // $query = "DELETE FROM tblsubject FROM tblsubject JOIN tblnotes ON tblnotes.sub_id = tblsubject.id WHERE tblsubject.id = '$id'";
+    //$query = "DELETE FROM tblsubject WHERE id IN (SELECT sub_id FROM tblnotes WHERE sub_id = '$id')";
+
+    //print_r($query);
+    // mysqli_error($query);
     $query_run = mysqli_query($mysql, $query);
 
     if ($query_run) {
-        echo "<pre>";
-        print_r($query_run);
-        echo "</pre>";
+        // echo "<pre>";
+        // print_r($query_run);
+        // echo "</pre>";
         ?>
         <script>
             swal('Good Job!', "Deleted Successfully!", 'success').then((value) => {
-                window.location.href = 'addSubject.php';
+                window.location.href = 'mangecourse.php';
             })
         </script>
         <?php
@@ -55,7 +67,7 @@ if(isset($_POST['btn-del-sub']))
         ?>
         <script>
             swal('Error!', "Couldn't", 'error').then((value) => {
-                window.location.href = 'addSubject.php';
+                window.location.href = 'mangecourse.php';
             })
         </script>
         <?php

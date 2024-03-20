@@ -139,9 +139,9 @@ require("sidebar.php");
 
                             <?php
                             include("../connect.php");
-                            $query = "SELECT * FROM tblsubject
-                            INNER JOIN tblnotes ON tblsubject.id =tblnotes.sub_id";
-                            //$query = "SELECT * FROM tblsubject";
+                            // $query = "SELECT * FROM tblsubject
+                            // INNER JOIN tblnotes ON tblsubject.id =tblnotes.sub_id";
+                            $query = "SELECT * FROM tblsubject";
                             $query_run = mysqli_query($mysql, $query);
                             ?>
 
@@ -160,8 +160,12 @@ require("sidebar.php");
                                             <tbody>
                                 <?php
                                 if (mysqli_num_rows($query_run) > 0) {
+                                    
 
                                     foreach ($query_run as $row) {
+                                        // echo"<pre>";
+                                        // print_r($row);
+                                        // echo"</pre>";
                                         ?>
                                                 <tr>
                                                 
