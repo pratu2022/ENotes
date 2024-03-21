@@ -102,7 +102,8 @@ if(isset($_POST['view']))
                                                 </tr> -->
                                                 <div class="row">
                                                     <div class="col-sm-6">
-                                                    <span class="text-muted ml-1 mt-2">Uploaded On : <?php  echo $row['UploadedOn']?></span></br>
+                                                    <b><span class="text-muted ml-1 mt-2">Uploaded On : <?php  echo $row['UploadedOn']?></span></br>
+                                                    <span class="text-muted ml-1 mt-2">Uploaded By : <?php  echo $row['UploadedBy']?></span></br></br></b>
                                                     <embed src="<?php echo "../Faculty/uploadassign/" . $row['Assignment'] ?>" type="application/pdf"  frameborder="0" class="mt" />
                                                     </div>
                                                 </div>

@@ -207,6 +207,7 @@ include('../connect.php');
    <div id="content">
    <div class="container">
         <h1 class="display-6">Assignment Description</h1>
+        
         <hr class="mt-3">
         <?php
              include("../connect.php");
@@ -222,7 +223,10 @@ include('../connect.php');
             foreach($query_run as $row)
             {
             ?>
-                <p class="text-muted"><?php  echo $row['UploadedOn']?></p>
+            
+                <b>Submit Between
+                <p class="text-muted">From: <?php  echo $row['Start_Date']?> To: <?php  echo $row['Start_End']?></p>
+                <p class="text-muted"></p></b>
                 <p><?php echo $row['Description']?></p>
                     <!-- <div class="col-2">
                     <a href="<?php echo "../Faculty/uploadassign/" . $row['Assignment'] ?>" class="icon-button" download><i class="fa fa-download icon-button mt-2" style="color:#28a745;"></i></a>
@@ -259,7 +263,7 @@ include('../connect.php');
 
                    <div id="postcomment" class="p-5">
         <!-- <h4 id="commenttext">Comments</h4> -->
-        <span id="commenttext">Comment:</span>
+        <h4 id="commenttext">Comment:</h4>
         <form method="post">
           <input type="hidden" name="commentid" id="commentid">
         <div class="form-floating">
