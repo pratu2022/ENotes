@@ -71,6 +71,9 @@
                   <a class="nav-link " href="#online_services">Service</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link " href="Faculty.php">Faculties</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link " href="courses.php">Courses</a>
                 </li>
                 <li class="nav-item">
