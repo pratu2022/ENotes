@@ -68,12 +68,6 @@ require("sidebar.php");
     <h1 class="display-6">Faculty</h1>
     <hr class="mt-3">
             <div class="container mt-2">
-               
-               
-
-
-
-
                 <!-- Table -->
                 <?php
                             include("../connect.php");

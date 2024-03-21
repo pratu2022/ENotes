@@ -136,6 +136,9 @@
         <a class="nav-link " href="Event.php"><span><i class="fa-solid fa-calendar-days mr-2 ico" style="color: #fafafa;"></i></span>Notice Board</a>
       </li> -->
       <li class="nav-item">
+        <a class="nav-link " href="addaboutus.php"><span><i class="fa-solid fa-calendar-days  mr-4 mt-3 ico" style="color: #fafafa;"></i></span>Manage About</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link " href="mangecourse.php"><span><i class="fa-brands fa-squarespace mr-4 mt-3 ico"></i></span>Manage Course</a>
       </li>
       

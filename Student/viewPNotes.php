@@ -77,13 +77,22 @@ if(isset($_POST['view']))
 {
 
     $subname = $_POST['subname'];
-    $query = "SELECT * FROM tblnotes WHERE Subject = '$subname'";
-    $query_run = mysqli_query($mysql, $query);
-           
+    // $query = "SELECT * FROM tblnotes WHERE sub_id = '$subname'";
+    $query = "SELECT * FROM tblsubject
+    INNER JOIN tblnotes ON tblsubject.id =tblnotes.sub_id WHERE sub_id = '$subname' AND Visibility = 'visible'";
+
+
+$sql = "SELECT * FROM tblsubject
+INNER JOIN tblnotes ON tblsubject.id =tblnotes.sub_id WHERE sub_id = '$subname'";
+$row1 = mysqli_fetch_assoc($mysql->query($sql) );
+
+$query_run = mysqli_query($mysql, $query);
+
 ?>
-<h1 class="display-6"><?php echo $subname ?></h1><span><a href="viewNotes.php" class="button mt-2">Back</a></span></span>
+<h1 class="display-6"><?php echo $row1['subject_name']?></h1><span><a href="viewNotes.php" class="button mt-2">Back</a></span></span>
 <hr class="mt-3">
  <?php 
+    
     if(mysqli_num_rows($query_run)>0){
         foreach($query_run as $row){
                                         ?>
@@ -103,7 +112,10 @@ if(isset($_POST['view']))
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                     <span class="text-muted " style=""><?php  echo $row['Uploadedon']?></span></br>
+                                                    <p class="text-muted">~<?php  echo $row['UploadedBy']?></p>
+                                                    <p class="lead mt-3">
                                                     <?php echo $row['Description']?>
+                                                    </p>
                                                     </div>
                                                 </div>
                                                 <!-- <a href="<?php// echo "../Faculty/uploadnotes/" . $row['Notes'] ?>" class="btn btn-success mt-3"

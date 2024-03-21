@@ -23,17 +23,36 @@ while($data=mysqli_fetch_array($result))
 //   <br>
   
 //   </div>';
+// $output.='<div class="col-xl-3 col-md-6 col-12">';
+// $output.='<div class="d-flex justify-content-center align-items-center">';
+// $output.='<div class="card mt-3" style="width: 18rem;>';
+// $output.='<div class="card-body">';
+// $output.='<div class="d-flex justify-content-between p-3">';
+// $output.='<p class="small text-grey "><i class="fa-solid fa-book-open-reader"></i></p>';
+// $output.='<p class="small text-grey">'.$data['ac_year'].'</p>';
+// $output.='</div>';
+// $output.='<h5 class="card-title" style="margin-left:1pc;">'.$data['subject_name'].'</h5>';
+// $output.='<p class="card-text mb-4" style="margin-left:1pc;">';
+// $output.=''.$data['allocated_faculty'].'</p>';
+// $output.='.<a class="px-4 py-2 btn btn-dark" href="#">Read More</a>.';
+// $output.='</div>';
+// $output.='</div>';
+// $output.='</div>';
+// $output.='</div>';
+
 $output.='<div class="col-xl-3 col-md-6 col-12">';
 $output.='<div class="d-flex justify-content-center align-items-center">';
-$output.='<div class="card mt-3" style="width: 18rem;>';
+$output.=' <div class="card" style="width: 18rem;">';
 $output.='<div class="card-body">';
-$output.='<div class="d-flex justify-content-between p-3">';
-$output.='<p class="small text-grey "><i class="fa-solid fa-book-open-reader"></i></p>';
-$output.='<p class="small text-grey">'.$data['ac_year'].'</p>';
-$output.='</div>';
-$output.='<h5 class="card-title" style="margin-left:1pc;">'.$data['subject_name'].'</h5>';
-$output.='<p class="card-text mb-4" style="margin-left:1pc;">';
-$output.=''.$data['allocated_faculty'].'</p>';
+$output.='<div class="d-flex justify-content-between">';
+
+$output.='<p class="small text-grey "><i class="fa-solid fa-book-open-reader fa-xl" style="color: #614385;"></i></p>';
+$output.='<p class="small text-grey ">'.$data['ac_year'].'</p>';
+$output.=' </div>';
+$output.='<h5 class="card-title mt-3">'.$data['subject_name'].'</h5>';
+
+$output.='<p class="card-text mt-2 mb-3">'.$data['allocated_faculty'].'</p>';
+$output.='<a class="px-4 py-2 btn btn-dark" href="viewCourseOne.php?id='.$data['id'].'">Read More</a>';
 $output.='</div>';
 $output.='</div>';
 $output.='</div>';

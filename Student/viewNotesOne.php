@@ -226,7 +226,10 @@ include('../connect.php');
             {
             ?>
                 <p class="text-muted"><?php  echo $row['Uploadedon']?></p>
-                <p><?php echo $row['Description']?></p>
+                <p class="text-muted">~<?php  echo $row['UploadedBy']?></p>
+                <p class="lead mt-3">
+                <?php echo $row['Description']?>
+                </p>
                     <!-- <div class="col-2">
                     <a href="<?php echo "../Faculty/uploadnotes/" . $row['Notes'] ?>" class="icon-button" download><i class="fa fa-download icon-button mt-2" style="color:#28a745;"></i></a>
                     </div> -->

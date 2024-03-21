@@ -131,7 +131,7 @@ require("sidebar.php");
                                         $query = "SELECT * FROM tblnotes WHERE UploadedBy = '$_SESSION[name]'";
                                         $query_run = mysqli_query($mysql, $query);
                                         $result = mysqli_num_rows($query_run);
-                                        echo $result;
+                                        //echo $result;
                                         ?>
                                         <div class="form-group">
                                                 <select class="form-select" aria-label="Default select example"
@@ -213,13 +213,7 @@ require("sidebar.php");
                                                     ><i class="fa-solid fa-eye icon-button mt-2"></i></a>
                                                     </form>
                                                     </td>
-                                                    <!-- Delete -->
-                                                    <!-- <form action="addstuddb.php" method="POST" >
-                                                            <input type="hidden" name="delete_id" value="<?php //echo $row['id'] ?>">
-                                                            <input type="hidden" name="del_stud_image"
-                                                            value="<?php //echo $row['stud_image'] ?>">
-                                                            <button type="submit"  class="icon-button" name="delete_stud_image"><i class="fa-solid fa-trash" style="color: #f70808;"></i></button>
-                                                        <form> -->
+                                                   
                                                     </div>
                                                     
                                                 

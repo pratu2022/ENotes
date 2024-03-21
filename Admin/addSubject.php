@@ -20,7 +20,7 @@ require("sidebar.php");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="myajaxadmincourse.js"></script>    
+<script src="../Admin/myajaxadmincourse.js"></script>    
 <title>Document</title>
     <style>
      #content {
@@ -147,7 +147,7 @@ $query_run = mysqli_query($mysql, $query);
                             <h5 class="card-title mt-3"><?php  echo $row['subject_name']?></h5>
 
                             <p class="card-text mt-2 mb-3"><?php  echo $row['allocated_faculty']?></p>
-                            <a class="px-4 py-2 btn btn-dark" href="#">Read More</a>
+                            <a class="px-4 py-2 btn btn-dark" href="viewCourseOne.php?id=<?php echo $row['id']?>">Read More</a>
                         </div>
                     </div>
                 </div>

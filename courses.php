@@ -36,7 +36,6 @@
 </head>
 <body>
 
-<!--   plx download the images, gifs from Pixcap Website here http://bit.ly/3zJ49Q7 -->
 
 <nav class="navbar navbar-expand-lg bg-color py-2">
     <div class="container">
@@ -69,13 +68,13 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " href="#online_services">Service</a>
+                  <a class="nav-link " href="http://localhost/Project/LMS/index.php#online_services">Service</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link " href="courses.php">Courses</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " aria-disabled="true">Contact</a>
+                  <a class="nav-link "href="http://localhost/Project/LMS/index.php#contact" aria-disabled="true">Contact</a>
                 </li>
               </ul>
         </div>

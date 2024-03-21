@@ -51,7 +51,7 @@
                   <a class="nav-link active" aria-current="page" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#about">About</a>
+                  <a class="nav-link" href="Admin/aboutus.php">About</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -74,7 +74,7 @@
                   <a class="nav-link " href="courses.php">Courses</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " aria-disabled="true">Contact</a>
+                  <a class="nav-link " href="#contact" aria-disabled="true">Contact</a>
                 </li>
               </ul>
         </div>
@@ -345,7 +345,7 @@
                     orem ipsum dolor sit amet, consectetur adipiscing.
                 </p>
 
-                <button class="button">Contact Us</button>
+                
             </div>
 
 
@@ -726,7 +726,7 @@ $query_run = mysqli_query($mysql, $query);
         </svg>
     </div>
 
-    <div class="container text-center fw-bold common-title " id="">
+    <div class="container text-center fw-bold common-title " id="contact">
         <h2 class="common-heading text-white ">Contact Us</h2>
         <hr class="w-25 mx-auto">
     </div>
@@ -784,9 +784,9 @@ $query_run = mysqli_query($mysql, $query);
                 <div class="col-lg-4 ">
                     <div class="contact-div p-5 d-flex flex-column justify-content-center align-items-center">
                         <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
-                            <img src="./images/call.gif" alt="GIF Image" class="img-fluid">
+                            <img src="./images/icons8-phone.gif" alt="GIF Image" class="img-fluid">
                         </div>
-                        <p class="text-white">(+00) 1234 5678</p>
+                        <p class="text-white">(+91) 9574831868</p>
                     </div>
                 </div>
 
@@ -794,9 +794,9 @@ $query_run = mysqli_query($mysql, $query);
                     <div class="contact-div p-5 d-flex flex-column justify-content-center align-items-center">
                         <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
                             <!--                            <i class="fa-solid fa-phone"></i>-->
-                            <img src="./images/email.gif" alt="GIF Image" class="img-fluid">
+                            <img src="./images/icons8-email.gif" alt="GIF Image" class="img-fluid">
                         </div>
-                        <p class="text-white">(+00) 1234 5678</p>
+                        <p class="text-white">bendrepratiksha747@gmail.com</p>
                     </div>
                 </div>
 
@@ -805,7 +805,7 @@ $query_run = mysqli_query($mysql, $query);
                         <div class="icon-div d-flex justify-content-center align-items-center rounded-circle mb-3">
                             <img src="./images/map.gif" alt="GIF Image" class="img-fluid">
                         </div>
-                        <p class="text-white">(+00) 1234 5678</p>
+                        <p class="text-white">Athwalines</p>
                     </div>
                 </div>
             </div>
@@ -835,15 +835,15 @@ $query_run = mysqli_query($mysql, $query);
 
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="footer-links">
-                            <h4 class="mt-5 mb-3 text-white">Subscribe</h4>
-                            <div class="input-group mb-3 w-75">
+                            <!-- <h4 class="mt-5 mb-3 text-white">Subscribe</h4> -->
+                            <!-- <div class="input-group mb-3 w-75">
                                 <input type="text" class="form-control" style=" border-radius: 20px 0px 0px 20px;" placeholder="Recipient's username"
                                        aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <span class="button" id="basic-addon2">Subscribe</span>
-                            </div>
+                            </div> -->
                             <h4 class="text-white mt-5 mb-3">About</h4>
-                            <ul class="text-light-grey list-unstyled d-flex flex-column gap-2">
-                                <li>About Us</li>
+                            <ul class="text-light-grey list-unstyled d-flex flex-column gap-2 mt-5">
+                                <a href="Admin/aboutus.php" style="text-decoration:none;color:#fff;">About Us</a>
                                 <li>Privacy Policy</li>
                                 <li>Noteswap Teams</li>
                             </ul>

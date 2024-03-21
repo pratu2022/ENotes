@@ -81,7 +81,7 @@ require("../connect.php");
                         ?>
                         <?php
 
-                        $qs = "SELECT Subject FROM tblnotes WHERE Subject = '$row[subject_name]' ORDER BY Subject";
+                        $qs = "SELECT * FROM tblnotes WHERE sub_id = '$row[id]' AND Visibility = 'visible'";
                         $ttlstud = mysqli_query($mysql, $qs);
 
                         $rows = mysqli_num_rows($ttlstud);
@@ -89,7 +89,7 @@ require("../connect.php");
                             ?>
                         </h5>
                         <form action="viewPNotes.php" method="post">
-                            <input type="hidden" name="subname" value="<?php echo"$row[subject_name]" ?>">
+                            <input type="hidden" name="subname" value="<?php echo"$row[id]" ?>">
                             <?php
                             //echo"<div><input type='submit' name='view' value='View $row[subject_name] Notes' class='fa-solid fa-arrow-right mt-2'><i class=''></i></div>";
                             echo"<button type='submit'  class='icon-button' name='view' style='margin-left:17pc'><i class='fa-solid fa-arrow-right' style='color: #fff;'></i></button>";

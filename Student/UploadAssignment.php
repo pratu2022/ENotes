@@ -85,9 +85,7 @@ require("sidebar.php");
                                             <div class="form-group mt-3">
                                                 <input type="file" class="form-control" name="assign" required />
                                             </div>
-                                            <div class="form-group mt-3">
-                                                <input type="text" class="form-control" name="title" placeholder="Enter Title" required />
-                                            </div>
+                                            
                                             <div class="form-group mt-3">
                                             <textarea name="desci" cols="20" rows="4"
                                                 placeholder="Enter Note Desciption" class="form-control" required></textarea>
@@ -110,6 +108,14 @@ require("sidebar.php");
                                                 ?>
                                                 <select>
                                                
+                                            </div>
+                                            <div class="form-group mt-3">
+                                            <select class="form-select " aria-label="Default select example" name="title">
+                                            <option selected disabled>Select Assignment</option>
+                                            <option>Assignment 1</option>
+                                            <option>Assignment 2</option>
+                                            <option>Assignment 3</option>
+                                            </select>
                                             </div>
                                    
                                    
