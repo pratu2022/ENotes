@@ -73,20 +73,22 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)
 <?php
 
 include("../connect.php");
-if(isset($_POST['view']))
-{
 
-    $subname = $_POST['subname'];
+
+    $id = $_GET['id'];
+    $Type = $_GET['type'];
+    
+    if($Type=='pdf'){
+    
     // $query = "SELECT * FROM tblnotes WHERE sub_id = '$subname'";
     $query = "SELECT * FROM tblsubject
-    INNER JOIN tblnotes ON tblsubject.id =tblnotes.sub_id WHERE sub_id = '$subname' AND Visibility = 'visible'";
-
+    INNER JOIN tblnotes ON tblsubject.id =tblnotes.sub_id WHERE sub_id = '$id' AND Visibility = 'visible' AND tblnotes.Type = '$Type'";
+    $query_run = mysqli_query($mysql, $query);
 
 $sql = "SELECT * FROM tblsubject
-INNER JOIN tblnotes ON tblsubject.id =tblnotes.sub_id WHERE sub_id = '$subname'";
+INNER JOIN tblnotes ON tblsubject.id = tblnotes.sub_id WHERE sub_id = '$id'";
 $row1 = mysqli_fetch_assoc($mysql->query($sql) );
 
-$query_run = mysqli_query($mysql, $query);
 
 ?>
 <h1 class="display-6"><?php echo $row1['subject_name']?></h1><span><a href="viewNotes.php" class="button mt-2">Back</a></span></span>
@@ -140,27 +142,77 @@ $query_run = mysqli_query($mysql, $query);
                             
                             ?>
 <?php 
-}else{
-    echo "nhi mila";
-   } 
+}elseif($Type=='mp4'){
+    //echo "mp4";
+     // $query = "SELECT * FROM tblnotes WHERE sub_id = '$subname'";
+     $query = "SELECT * FROM tblsubject
+     INNER JOIN tblnotes ON tblsubject.id =tblnotes.sub_id WHERE sub_id = '$id' AND Visibility = 'visible' AND tblnotes.Type = '$Type'";
+     $query_run = mysqli_query($mysql, $query);
+ 
+ $sql = "SELECT * FROM tblsubject
+ INNER JOIN tblnotes ON tblsubject.id = tblnotes.sub_id WHERE sub_id = '$id'";
+ $row1 = mysqli_fetch_assoc($mysql->query($sql) );
+ 
+ 
+ ?>
+ <h1 class="display-6"><?php echo $row1['subject_name']?></h1><span><a href="viewNotes.php" class="button mt-2">Back</a></span></span>
+ <hr class="mt-3">
+  <?php 
+     
+     if(mysqli_num_rows($query_run)>0){
+         foreach($query_run as $row){
+                                         ?>
+                                             <div class="accordion accordion-flush" id="accordionFlushExample">
+                                             <div class="accordion-item">
+                                                 <h2 class="accordion-header">
+                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<?php  echo $row['srno']?>" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                     <h6><?php  echo $row['Title']?> </h6>
+                                                 </button>
+                                                 </h2>
+                                                 <div id="<?php  echo $row['srno']?>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                 <div class="accordion-body">
+                                                 <!-- <tr>
+                                                 <td><?php  //echo $row['UploadedBy']?></td>
+                                                 <td><?php // echo $row['Uploadedon']?></td>
+                                                 </tr> -->
+                                                 <div class="row">
+                                                     <div class="col-sm-6">
+                                                     <span class="text-muted " style=""><?php  echo $row['Uploadedon']?></span></br>
+                                                     <p class="text-muted">~<?php  echo $row['UploadedBy']?></p>
+                                                     <p class="lead mt-3">
+                                                     <?php echo $row['Description']?>
+                                                     </p>
+                                                     </div>
+                                                 </div>
+                                                 <!-- <a href="<?php// echo "../Faculty/uploadnotes/" . $row['Notes'] ?>" class="btn btn-success mt-3"
+                                                         download>DOWNLOAD</a> -->
+                                                     <!-- <form action="viewNotesOne.php" method="POST">
+                                                     <input type="hidden" name="subname" value="<?php echo"$row[Subject]" ?>">
+                                                     <input type="hidden" name="id" value="<?php echo"$row[srno]" ?>">
+                                                      <button type='submit'  class='btn btn-success mt-4' name='view'><i class='' ></i></button>
+                                                     </form> -->
+                                                     <form>
+                                                         <a href="viewNotesOne.php?id=<?php echo $row['srno']; ?>"
+                                                     ><i class="fa-solid fa-arrow-right icon-button mt-2" style='color: black;'></i></a>
+                                                     </form>
+                                                 </div>
+                                                 </div>
+                                             </div>
+                                             </div>
+                                         <?php
+                                     }
+ 
+                                 }
+                             
+                             ?>
+                             <?php
+} 
+   else{
+    echo"nhi mila";
+   }
 ?>
 <?php
 ?>
-        <!-- <div class="container ">
-            <div class="row">
-                <div class="col-md-12">
-                            <div class="row">
-                            <h1 class="display-6">Notes Description</h1>
-                            <hr class="mt-3">
-                            
-                            
-                            
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-   -->
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

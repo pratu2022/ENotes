@@ -31,6 +31,7 @@ if (isset($_POST['admin_login'])) {
         <?php
         $result_fetch = mysqli_fetch_assoc($result);
         $_SESSION['logged_in'] = true;
+        $_SESSION['key'] = 'pratu';
         $_SESSION['username'] = $result_fetch['username'];
         header("location: index.php");
     } 
@@ -61,6 +62,7 @@ if(isset($_POST['student_login']))
             {
                 //echo "right";
                 $_SESSION['logged_in'] = true;
+                $_SESSION['key'] = 'pratu';
                 $_SESSION['username'] = $result_fetch['stud_username'];
                 $_SESSION['uid'] = $result_fetch['id'];
                 $_SESSION['regno'] = $result_fetch['regno'];

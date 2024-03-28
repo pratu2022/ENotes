@@ -121,16 +121,23 @@
         <a class="nav-link active text-white" href="index.php"><span><i class="fa-solid fa-house mr-4 mt-3 ico" style="color: #f1f2f3;"></i></span>Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="addnotes.php"><span><i class="fa-solid fa-book-open-reader mr-4 ico" style="color: #f9fafb;"></i></span>Notes Manage</a>
+        <a class="nav-link text-white" href="addnotes.php"><span><i class="fa-solid fa-book-open-reader mr-4 ico" style="color: #f9fafb;"></i></span>Notes</a>
       </li>
       <!-- <li class="nav-item">
         <a class="nav-link text-white" href="viewNotes.php"><span><i class="fa-solid fa-note-sticky mr-2 ico" style="color: #ffffff;"></i></span>View Notes</a>
       </li> -->
       <li class="nav-item">
-        <a class="nav-link text-white" href="addAssignment.php"><span><i class="fa-solid fa-paste mr-4 ico" style="color: #f9fafb;"></i></span>Assignement Manage</a>
+        <a class="nav-link text-white" href="addAssignment.php"><span><i class="fa-solid fa-paste mr-4 ico" style="color: #f9fafb;"></i></span>Assignement</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="viewSAssign.php"><span><i class="fa-solid fa-paperclip mr-4 ico" style="color: #ffffff;"></i></span>Student's Assignment</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link text-white" href="AssignmentReport.php"><span><i class="fa-solid fa-scroll mr-4 ico" style="color: #ffffff;"></i></span>Assignment Report</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link text-white" href="Quiz.php?q=4"><span><i class="fa-regular fa-newspaper mr-4 ico" style="color: #ffffff;"></i></span>Quiz</a>
       </li>
      
       <li class="nav-item">

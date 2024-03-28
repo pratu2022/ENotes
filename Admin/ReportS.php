@@ -65,18 +65,24 @@ require("sidebar.php");
 <div class="col-md-2">
 <h1 class="display-6">Student</h1>
 </div>
-<div class="col-md-4">
-    <input type="text" name="From" id="From" class="form-control ml-5 mt-2" placeholder="From Date"/>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightr" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">B/w Dates</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+<form action="exportstud.php" method="post">
+<input type="text" name="From" id="From" class="form-control mt-3" placeholder="From Date"/>
+<input type="text" name="to" id="to" class="form-control mt-4 mb-2" placeholder="To Date"/>
+ <input type="submit" name="ranges" id="ranges" value="Export" class="button ml-5 mt-2"/>
+<input type="button" name="range" id="range" value="Range" class="button ml-5 mt-2"/>
 </div>
-<div class="col-md-4">
-    <input type="text" name="to" id="to" class="form-control ml-5 mt-2" placeholder="To Date"/>
-</div>
-<div class="col-md-2">
-    <input type="button" name="range" id="range" value="Range" class="button ml-5 mt-2"/>
-</div>
+</form>
+  </div>
 </div>
 <hr class="mt-3">
 <div class="container">
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightr" aria-controls="offcanvasRight">Report</button>
 <div class="row">
                 
                 <div class="col-md-12">    
@@ -180,6 +186,7 @@ $sql = mysqli_query($mysql, $query);
     <th>Student Address</th>
     <th>Student Image</th>
     <th>Student Phone</th>
+    <th>Action</th>
     </tr>
 </thead>
 <tbody>
@@ -191,6 +198,22 @@ $sql = mysqli_query($mysql, $query);
     <td><?php echo $row["stud_address"]; ?></td>
     <td><img src="<?php echo "uploads/" . $row['stud_image'] ?>" alt="" width ="50" height="50"></td>
     <td><?php echo $row["stud_phone"]; ?></td>
+    <td>
+                                                    <div style="display: flex;">
+                                                        <!-- Update -->
+                                                    <form action="updatestuddb.php" method="POST">
+                                                    <a href="updateStudent.php?id=<?php echo $row['id']; ?>"
+                                                    ><i class="fa-solid fa-pen-to-square icon-button mt-2" style="color: #FFD43B;"></i></a>
+                                                    </form>
+                                                    <!-- Delete -->
+                                                    <form action="addstuddb.php" method="POST" >
+                                                            <input type="hidden" name="delete_id" value="<?php echo $row['id'] ?>">
+                                                            <input type="hidden" name="del_stud_image"
+                                                            value="<?php echo $row['stud_image'] ?>">
+                                                            <button type="submit"  class="icon-button" name="delete_stud_image"><i class="fa-solid fa-trash" style="color: #f70808;"></i></button>
+                                                        <form>
+                                                    </div>
+                                                    </td>
     </tr>
 <?php } ?>
 </tbody>

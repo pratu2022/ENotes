@@ -39,7 +39,7 @@
 
 <nav class="navbar navbar-expand-lg bg-color py-4 pt-lg-5">
     <div class="container">
-        <a class="navbar-brand text-white fw-bold" href="#">NoteSwap</a>
+        <a class="navbar-brand text-white fw-bold" href="#">logisticode</a>
         <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                 class="navbar-toggler"
                 data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
@@ -221,19 +221,17 @@
         <div class="row mb-5 ">
             <div class="d-flex flex-column align-items-start justify-content-center col-xl-6 xol-lg-6 col-md-12 col-12 order-1 order-lg-0 text-md-start text-center">
                 <h1 class=" text-capitalize fw-bolder text-white">
-                We've summarized and analyzed every book on your syllabus.
+                Welcome to Logisticode
                 </h1>
                 <p class="mt-3 mb-5  para-width text-light-grey ">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Quis ipsum suspendisse ultrices gravi.
+                Confused on which course to take? I have got you covered. Browse courses and find out the best course for you. Its free! Code With Logisticode is my attempt to teach basics and those coding techniques to people in short time which took me ages to learn.
                 </p>
 
-                <div class="text-center w-100 text-md-start">
+                <!-- <div class="text-center w-100 text-md-start">
                     <button class="button pb-2" data-bs-offset="0,5" data-bs-placement="top"
                             data-bs-title="Get Best Services" data-bs-toggle="tooltip">Contact Us
                     </button>
-                </div>
+                </div> -->
 
             </div>
 
@@ -291,7 +289,7 @@
                 <div class=" card-box rounded-2 p-5 text-center shadow">
                     <img alt="GIF Image" class="img-fluid" src="./images/speaker.gif" width="200px">
 
-                    <h5 class="my-3 fw-normal">Provide Best Assignments </h5>
+                    <h5 class="my-3 fw-normal">Provide Best Question Banks </h5>
                     <p class="pe-3 mb-5">
                         Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse!
                     </p>
@@ -307,7 +305,7 @@
             <div class="col-xxl-4 col-lg-4 col-12 ">
                 <div class=" card-box rounded-2 p-5 text-center">
                     <img alt="GIF Image" class="img-fluid" src="./images/seo.gif" width="200px">
-                    <h5 class="my-3 fw-normal "> Best Faculties For Help </h5>
+                    <h5 class="my-3 fw-normal "> Quiz Test</h5>
                     <p class="pe-3 mb-5">
                         Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse!
                     </p>

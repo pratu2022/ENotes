@@ -85,14 +85,22 @@ require("../connect.php");
                         $ttlstud = mysqli_query($mysql, $qs);
 
                         $rows = mysqli_num_rows($ttlstud);
-                        echo $rows
-                            ?>
+                        echo $rows;
+                        if($rows!=0){
+                        $rowsu = mysqli_fetch_assoc($mysql->query($qs) );
+                        ?>
+                        
                         </h5>
+                        
                         <form action="viewPNotes.php" method="post">
                             <input type="hidden" name="subname" value="<?php echo"$row[id]" ?>">
+                            <input type="hidden" name="Type" value="<?php echo"$rowsu[Type]" ?>">
+                           <div class="gap-2">
+                           <a href="viewPNotes.php?id=<?php echo $row['id'];?>&type=pdf" class="icon-button"><i class='fa-solid fa-file-pdf' style='color: #fff;margin-left:15pc;'></i></a>
+                            <a href="viewPNotes.php?id=<?php echo $row['id'];?>&type=mp4" class="icon-button"><i class='fa-solid fa-file-video' style='color: #fff;'></i></a>
+                           </div>
                             <?php
-                            //echo"<div><input type='submit' name='view' value='View $row[subject_name] Notes' class='fa-solid fa-arrow-right mt-2'><i class=''></i></div>";
-                            echo"<button type='submit'  class='icon-button' name='view' style='margin-left:17pc'><i class='fa-solid fa-arrow-right' style='color: #fff;'></i></button>";
+                        }
                             ?>
                         </form>
                        
